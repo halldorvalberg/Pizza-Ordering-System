@@ -9,6 +9,7 @@ class PizzaRepController
         PizzaRepController();
         virtual ~PizzaRepController();
         void init();
+        void add_to_menu();
 
     protected:
 

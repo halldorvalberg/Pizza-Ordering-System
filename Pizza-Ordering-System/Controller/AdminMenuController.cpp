@@ -52,7 +52,7 @@ void AdminMenuController::init()
         outputstring("I do nothing yet");
     }
     else if( admininput == "q"){
-//        exitAplication();
+        MainMenuController mmc;
     }
 
 }

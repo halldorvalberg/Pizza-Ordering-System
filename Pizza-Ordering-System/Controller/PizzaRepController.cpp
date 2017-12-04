@@ -3,6 +3,7 @@
 PizzaRepController::PizzaRepController()
 {
     clearScrean();
+    dispHeader();
     init();
 }
 
@@ -30,8 +31,7 @@ void PizzaRepController::init()
         PizzaRepController prc;
     }
     else if (input[0] == '2'){
-        ///Add item to Pizza Menu
-        outputstring("I don't do anything yet");
+        add_to_menu();
         PizzaRepController prc;
     }
     else if (input[0] == '3'){
@@ -43,4 +43,13 @@ void PizzaRepController::init()
         ///Return to Admin Menu
         AdminMenuController amc;
     }
+}
+
+void PizzaRepController::add_to_menu()
+{
+    ofstream fout;
+    fout.open("Pizza_Menu_Binary.dat", ios::binary|ios::app);
+    fout.close();
+
+
 }
