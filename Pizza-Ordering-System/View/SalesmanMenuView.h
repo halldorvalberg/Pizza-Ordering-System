@@ -1,16 +1,13 @@
 #ifndef SALESMANMENUVIEW_H
 #define SALESMANMENUVIEW_H
 
+#include <iostream>
+using namespace std;
 
-class SalesmanMenuView
+
+namespace SalesmanMenuView
 {
-    public:
-        SalesmanMenuView();
-        virtual ~SalesmanMenuView();
-
-    protected:
-
-    private:
+    void SalesmanView();
 };
 
 #endif // SALESMANMENUVIEW_H

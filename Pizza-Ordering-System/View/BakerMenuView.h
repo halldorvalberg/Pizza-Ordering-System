@@ -1,16 +1,12 @@
 #ifndef BAKERMENUVIEW_H
 #define BAKERMENUVIEW_H
 
+#include <iostream>
+using namespace std;
 
-class BakerMenuView
+namespace BakerMenuView
 {
-    public:
-        BakerMenuView();
-        virtual ~BakerMenuView();
-
-    protected:
-
-    private:
+    void BakerView();
 };
 
 #endif // BAKERMENUVIEW_H
