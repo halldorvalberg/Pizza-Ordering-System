@@ -17,8 +17,8 @@ void MainMenuController::init()
     string inputString;
 
     do{
-//        displayMenu();
-         cin >> inputString;
+        MainMenudisplay();
+        cin >> inputString;
     }while (inputString[0] != 'a' &&
             inputString[0] != 'b' &&
             inputString[0] != 'c' &&

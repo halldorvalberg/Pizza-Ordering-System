@@ -5,12 +5,16 @@
 #include<iostream>
 
 #include "GlobalTools.h"
+#include "MainMenuView.h"
+
 #include "AdminMenuController.h"
 #include "BakerMenuController.h"
 #include "CostumerMenuController.h"
 #include "SalesmanMenuController.h"
 
 
+
+using namespace MainMenuView;
 using namespace GlobalTools;
 using namespace std;
 

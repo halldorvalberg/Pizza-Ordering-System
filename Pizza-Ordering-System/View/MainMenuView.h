@@ -1,16 +1,13 @@
 #ifndef MAINMENUVIEW_H
 #define MAINMENUVIEW_H
 
+#include <iostream>
 
-class MainMenuView
+using namespace std;
+
+namespace MainMenuView
 {
-    public:
-        MainMenuView();
-        virtual ~MainMenuView();
-
-    protected:
-
-    private:
+    void MainMenudisplay();
 };
 
 #endif // MAINMENUVIEW_H
