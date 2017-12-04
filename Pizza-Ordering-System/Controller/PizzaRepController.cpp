@@ -50,6 +50,4 @@ void PizzaRepController::add_to_menu()
     ofstream fout;
     fout.open("Pizza_Menu_Binary.dat", ios::binary|ios::app);
     fout.close();
-
-
 }
