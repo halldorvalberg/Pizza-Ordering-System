@@ -10,11 +10,8 @@ class Pizza
 {
     public:
         Pizza();
-<<<<<<< HEAD
         Pizza(string name, int price, char size);
-=======
         Pizza(string name, vector<Toppings> toppings, int size, int price);
->>>>>>> a0bd809764329400139765c761b9eb3f268370f6
         string getpizzaname();
         int getpizzasize();
         int getpizzaprice();
