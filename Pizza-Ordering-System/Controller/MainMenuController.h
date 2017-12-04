@@ -13,6 +13,7 @@
 #include "BakerMenuController.h"
 #include "CostumerMenuController.h"
 #include "SalesmanMenuController.h"
+#include "PizzaRepController.h"
 
 using namespace DisplayString;
 using namespace AdminMenuView;

@@ -30,7 +30,8 @@ void AdminMenuController::init()
            admininput[0] != 'q');
 
     if( admininput == "1"){
-        outputstring("I do nothing yet");
+        ///PizzaMenu
+        PizzaRepController prc;
     }
     else if( admininput == "2"){
         outputstring("I do nothing yet");
