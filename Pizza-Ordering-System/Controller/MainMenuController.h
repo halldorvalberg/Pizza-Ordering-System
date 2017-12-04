@@ -11,6 +11,8 @@
 #include "BakerMenuView.h"
 #include "CostumerMenuView.h"
 #include "SalesmanMenuView.h"
+#include "GlobalView.h"
+#include "PizzaRepMenuView.h"
 
 #include "AdminMenuController.h"
 #include "BakerMenuController.h"
@@ -18,6 +20,8 @@
 #include "SalesmanMenuController.h"
 #include "PizzaRepController.h"
 
+using namespace PizzaRepMenuView;
+using namespace GlobalView;
 using namespace SalesmanMenuView;
 using namespace CostumerMenuView;
 using namespace BakerMenuView;

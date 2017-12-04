@@ -9,11 +9,12 @@ class BakerMenuController
     public:
         BakerMenuController();
         virtual ~BakerMenuController();
+        void init();
 
     protected:
 
     private:
-        init();
+
 };
 
 #endif // BAKERMENUCONTROLLER_H

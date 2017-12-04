@@ -6,7 +6,7 @@ using namespace std;
 
 namespace BakerMenuView
 {
-    void BakerView();
+    void BakerMenuDisplay();
 };
 
 #endif // BAKERMENUVIEW_H

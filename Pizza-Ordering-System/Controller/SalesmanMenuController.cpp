@@ -11,7 +11,8 @@ SalesmanMenuController::~SalesmanMenuController()
     //dtor
 }
 
-void SalesmanMenuController::init(){
+void SalesmanMenuController::
+    init(){
     SalesmanMenuDisplay();
 
     char input;

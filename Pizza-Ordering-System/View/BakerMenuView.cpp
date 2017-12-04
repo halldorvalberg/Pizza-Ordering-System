@@ -1,6 +1,6 @@
 #include "BakerMenuView.h"
 
-void BakerMenuView::BakerView(){
+void BakerMenuView::BakerMenuDisplay(){
     cout << "Baker Menu" << endl << endl;
     cout << "What do you want to do? " << endl;
     cout << "d: Display all pizzas" << endl;

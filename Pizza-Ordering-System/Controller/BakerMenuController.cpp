@@ -2,7 +2,8 @@
 
 BakerMenuController::BakerMenuController()
 {
-    //ctor
+    clearScrean();
+    init();
 }
 
 BakerMenuController::~BakerMenuController()
@@ -10,20 +11,20 @@ BakerMenuController::~BakerMenuController()
     //dtor
 }
 
-void init(){
+void BakerMenuController::init(){
 
     char input;
 
     do{
-        BakerView();
+        BakerMenuDisplay();
         cin >> input;
     }while(input !='D'&& input != 'd' &&
           input !='c'&& input != 'C' &&input !='q'&& input != 'Q');
 
-    cout << "Please select your location: ";
+        outputstring("Please select your location: ");
     //selectlocation();
     if (input == 'd' || input == 'D'){
-        cout << "Displaying all pizzas" << endl;
+        outputstring("Displaying all pizzas" );
         //displaypizzas()
     }
     else if(input == 'c' || input == 'C'){

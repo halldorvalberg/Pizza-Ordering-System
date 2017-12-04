@@ -8,6 +8,7 @@ class PizzaRepController
     public:
         PizzaRepController();
         virtual ~PizzaRepController();
+        void init();
 
     protected:
 
