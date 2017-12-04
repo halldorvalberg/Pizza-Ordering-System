@@ -17,15 +17,15 @@ Pizza::Pizza(string name, int price, int size){
     this->price = price;
 }
 
-string Pizza::getname(){
+string Pizza::getpizzaname(){
     return this->name;
 }
 
-int Pizza::getprice(){
-    return this->price;
+int Pizza::getpizzasize(){
+    return this->size;
 }
 
-int Pizza::getprice(){
+int Pizza::getpizzaprice(){
     return this->price;
 }
 

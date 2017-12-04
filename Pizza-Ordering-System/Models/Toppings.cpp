@@ -2,10 +2,14 @@
 
 Toppings::Toppings()
 {
-    //ctor
+    this->name = "";
+    this->price = 0;
 }
 
-Toppings::Toppings(string name, int price);
+Toppings::Toppings(string name, int price){
+    this->name = name;
+    this->price = price;
+}
 
 string Toppings::gettoppingname(){
     return this->name;
