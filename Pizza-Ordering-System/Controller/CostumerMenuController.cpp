@@ -11,20 +11,23 @@ CostumerMenuController::~CostumerMenuController()
 }
 void CostumerMenuController::init(){
     char input;
-    cin >> input;
-    if (input == 'm' || input == 'M'){
-        OrderFromMenu();
-    }
-    else if(input == 'c' || input == 'C'){
-        customOrder();
-
-    }
-    else if (input == 'q' || input == 'Q'){
-        MainMenuController mmc;
-    }
-    else{
-        cout << "Invalid input" << endl;
-    }
+    do{
+        CostumerMenu();
+        cin >> input;
+        if (input == 'm' || input == 'M'){
+            OrderFromMenu();
+        }
+        else if(input == 'c' || input == 'C'){
+            customOrder();
+        }
+        else if (input == 'q' || input == 'Q'){
+            MainMenuController mmc;
+        }
+        else{
+            cout << "Invalid input, please try again." << endl;
+        }
+    while(input !='m'&& input != 'M' &&
+          input !='c'&& input != 'C' &&input !='q'&& input != 'Q');
 }
 
 void CostumerMenuController::customOrder(){
