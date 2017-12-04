@@ -13,3 +13,25 @@ void GlobalView::dispHeader()
     cout << endl;
 }
 
+void GlobalView::display_menu()
+{
+    int i = 1;
+    string str;
+    fstream fin;
+
+    cout << "\tThe pizza menu" << endl << endl;
+    cout << ("            Name:\tPrice:\tsize: ") << endl;
+
+    fin.open("Pizza_Menu_Binary.txt");
+    if(fin.is_open()) {
+        while(!fin.eof()) {
+            getline(fin, str);
+            cout << "Pizza nr " << i << ": " <<  str << endl;
+            i++;
+        }
+        fin.close();
+    }
+    else {
+        cout << "Unable to read from file!" << endl;
+    }
+}

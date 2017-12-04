@@ -11,7 +11,7 @@ Pizza::~Pizza()
 {
     //dtor
 }
-Pizza::Pizza(string name, int price, int size){
+Pizza::Pizza(string name, int price, char size){
     this->name = name;
     this->size = size;
     this->price = price;
@@ -38,4 +38,21 @@ ofstream& operator << (ofstream& out, Pizza& pizza)
 {
     out << pizza.name << " " << pizza.size <<" " << pizza.price << endl;
     return out;
+}
+
+ostream& operator << (ostream& out, Pizza& pizza)
+{
+    out << pizza.name << " " << pizza.price << " " << pizza.size << endl;
+    return out;
+}
+istream& operator >> (istream& in, Pizza& pizza)
+{
+    cout << "Input Pizza name: ";
+    in >> pizza.name;
+    cout << "input Pizza price: ";
+    in >> pizza.price;
+    cout << "Input Pizza size: ";
+    in >> pizza.size;
+
+    return in;
 }

@@ -10,13 +10,14 @@ class Pizza
 {
     public:
         Pizza();
-        Pizza(string name, int price, int size);
+        Pizza(string name, int price, char size);
         string getpizzaname();
         int getpizzasize();
         int getpizzaprice();
         friend ifstream& operator >> (ifstream& in, Pizza& pizza);
         friend ofstream& operator << (ofstream& out, Pizza& pizza);
-
+        friend ostream& operator << (ostream& out, Pizza& pizza);
+        friend istream& operator >> (istream& in, Pizza& pizza);
         virtual ~Pizza();
 
     protected:
@@ -24,7 +25,7 @@ class Pizza
     private:
         string name;
         int price;
-        int size;
+        char size;
         vector <Toppings> toppings;
 };
 
