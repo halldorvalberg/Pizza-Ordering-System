@@ -11,12 +11,19 @@ Pizza::~Pizza()
 {
     //dtor
 }
+<<<<<<< HEAD
 Pizza::Pizza(string name, int price, char size){
+=======
+Pizza::Pizza(string name, vector<Toppings> toppings, int size, int price){
+>>>>>>> a0bd809764329400139765c761b9eb3f268370f6
     this->name = name;
+    this->toppings = toppings;
     this->size = size;
     this->price = price;
 }
-
+void Pizza::addtopping(){
+    toppings.push_back();
+}
 string Pizza::getpizzaname(){
     return this->name;
 }
