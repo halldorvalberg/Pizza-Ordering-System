@@ -1,9 +1,10 @@
 #include <iostream>
+#include "MainMenuController.h"
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    MainMenuController mmc;
     return 0;
 }

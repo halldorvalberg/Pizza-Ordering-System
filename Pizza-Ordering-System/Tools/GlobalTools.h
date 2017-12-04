@@ -1,16 +1,13 @@
 #ifndef GLOBALTOOLS_H
 #define GLOBALTOOLS_H
 
+#include <stdlib.h>
+#include <cstdlib>
 
-class GlobalTools
+namespace GlobalTools
 {
-    public:
-        GlobalTools();
-        virtual ~GlobalTools();
-
-    protected:
-
-    private:
+    void clearScrean();
+    void exitApplication();
 };
 
 #endif // GLOBALTOOLS_H

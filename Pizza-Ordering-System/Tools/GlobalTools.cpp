@@ -1,11 +1,12 @@
 #include "GlobalTools.h"
 
-GlobalTools::GlobalTools()
+
+void GlobalTools::clearScrean()
 {
-    //ctor
+    system("CLS");
 }
 
-GlobalTools::~GlobalTools()
+void GlobalTools::exitApplication()
 {
-    //dtor
+    exit(0);
 }
