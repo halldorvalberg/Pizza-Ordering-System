@@ -34,7 +34,8 @@ ifstream& operator >> (ifstream& in, Pizza& pizza){
     return in;
 }
 
-ofstream& operator << (ofstream& out, Pizza& pizza);
+ofstream& operator << (ofstream& out, Pizza& pizza)
 {
     out << pizza.name << " " << pizza.size <<" " << pizza.price << endl;
+    return out;
 }

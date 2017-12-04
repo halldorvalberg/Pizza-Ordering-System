@@ -65,10 +65,11 @@
 1512399551 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\mainmenucontroller.cpp
 	"MainMenuController.h"
 
-1512400881 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\mainmenucontroller.h
+1512401914 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\mainmenucontroller.h
 	<string>
 	<iostream>
 	<fstream>
+	<vector>
 	"GlobalTools.h"
 	"MainMenuView.h"
 	"AdminMenuView.h"
@@ -83,6 +84,8 @@
 	"CostumerMenuController.h"
 	"SalesmanMenuController.h"
 	"PizzaRepController.h"
+	"Pizza.h"
+	"Toppings.h"
 
 1512395333 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\tools\globaltools.h
 	<stdlib.h>
@@ -140,7 +143,7 @@
 1512400896 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\pizzarepcontroller.h
 	"MainMenuController.h"
 
-1512400604 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\pizzarepcontroller.cpp
+1512401575 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\pizzarepcontroller.cpp
 	"PizzaRepController.h"
 
 1512399519 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\view\globalview.h
@@ -154,4 +157,12 @@
 
 1512400249 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\view\pizzarepmenuview.cpp
 	"PizzaRepMenuView.h"
+
+1512402009 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\models\pizza.h
+	"MainMenuController.h"
+	"Toppings.h"
+
+1512400551 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\models\toppings.h
+	<iostream>
+	<fstream>
 

@@ -1,6 +1,8 @@
 #ifndef PIZZA_H
 #define PIZZA_H
 
+#include "MainMenuController.h"
+
 #include "Toppings.h"
 
 
@@ -13,7 +15,7 @@ class Pizza
         int getpizzasize();
         int getpizzaprice();
         friend ifstream& operator >> (ifstream& in, Pizza& pizza);
-        friend ofstream& operator >> (ofstream& out, Pizza& pizza);
+        friend ofstream& operator << (ofstream& out, Pizza& pizza);
 
         virtual ~Pizza();
 

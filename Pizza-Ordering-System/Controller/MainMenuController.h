@@ -4,6 +4,7 @@
 #include<string>
 #include<iostream>
 #include<fstream>
+#include<vector>
 
 #include "GlobalTools.h"
 #include "MainMenuView.h"
@@ -20,6 +21,8 @@
 #include "CostumerMenuController.h"
 #include "SalesmanMenuController.h"
 #include "PizzaRepController.h"
+#include "Pizza.h"
+#include "Toppings.h"
 
 using namespace PizzaRepMenuView;
 using namespace GlobalView;
