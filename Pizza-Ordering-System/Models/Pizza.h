@@ -10,10 +10,11 @@ class Pizza
 {
     public:
         Pizza();
-        Pizza(string name, int price, int size);
+        Pizza(string name, vector<Toppings> toppings, int size, int price);
         string getpizzaname();
         int getpizzasize();
         int getpizzaprice();
+        void addtopping();
         friend ifstream& operator >> (ifstream& in, Pizza& pizza);
         friend ofstream& operator << (ofstream& out, Pizza& pizza);
 
