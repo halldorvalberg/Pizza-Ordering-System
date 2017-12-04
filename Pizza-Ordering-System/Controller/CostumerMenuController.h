@@ -1,13 +1,15 @@
 #ifndef COSTUMERMENUCONTROLLER_H
 #define COSTUMERMENUCONTROLLER_H
-#include "CostumerMenuView.h"
-#include "CostumerMenu.h"
+
+#include "MainMenuController.h"
+
 class CostumerMenuController
 {
     public:
         CostumerMenuController();
         virtual ~CostumerMenuController();
         void customOrder();
+        void OrderFromMenu();
 
     protected:
 

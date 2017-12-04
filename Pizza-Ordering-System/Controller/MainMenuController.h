@@ -8,6 +8,9 @@
 #include "MainMenuView.h"
 #include "AdminMenuView.h"
 #include "DisplayString.h"
+#include "BakerMenuView.h"
+#include "CostumerMenuView.h"
+#include "SalesmanMenuView.h"
 
 #include "AdminMenuController.h"
 #include "BakerMenuController.h"
@@ -15,6 +18,9 @@
 #include "SalesmanMenuController.h"
 #include "PizzaRepController.h"
 
+using namespace SalesmanMenuView;
+using namespace CostumerMenuView;
+using namespace BakerMenuView;
 using namespace DisplayString;
 using namespace AdminMenuView;
 using namespace MainMenuView;

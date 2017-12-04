@@ -1,6 +1,7 @@
 #include "SalesmanMenuView.h"
 
-void SalesmanMenuView::SalesmanView(){
+void SalesmanMenuView::SalesmanMenuDisplay()
+{
     cout << "Salesman menu" << endl << endl;
     cout << "What do you want to do? " << endl;
     cout << "d: Display all pizzas" << endl;

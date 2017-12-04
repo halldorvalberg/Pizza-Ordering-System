@@ -6,7 +6,7 @@ using namespace std;
 
 namespace CostumerMenuView
 {
-    void CostumerView();
+    void CostumerMenuDisplay();
 };
 
 #endif // COSTUMERMENUVIEW_H

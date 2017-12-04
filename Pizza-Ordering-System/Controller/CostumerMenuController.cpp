@@ -12,7 +12,7 @@ CostumerMenuController::~CostumerMenuController()
 void CostumerMenuController::init(){
     char input;
     do{
-        CostumerMenu();
+        CostumerMenuDisplay();
         cin >> input;
         if (input == 'm' || input == 'M'){
             OrderFromMenu();
@@ -26,7 +26,7 @@ void CostumerMenuController::init(){
         else{
             cout << "Invalid input, please try again." << endl;
         }
-    while(input !='m'&& input != 'M' &&
+    }while(input !='m'&& input != 'M' &&
           input !='c'&& input != 'C' &&input !='q'&& input != 'Q');
 }
 
@@ -37,6 +37,6 @@ void CostumerMenuController::customOrder(){
 }
 void CostumerMenuController::OrderFromMenu(){
     cout << "Make a new pizza from menu" << endl;
-        cout << "Please select your pizza"
+        cout << "Please select your pizza";
         //displaymenu()
 }

@@ -17,7 +17,7 @@ void init(){
     do{
         BakerView();
         cin >> input;
-    while(input !='D'&& input != 'd' &&
+    }while(input !='D'&& input != 'd' &&
           input !='c'&& input != 'C' &&input !='q'&& input != 'Q');
 
     cout << "Please select your location: ";

@@ -2,7 +2,8 @@
 
 SalesmanMenuController::SalesmanMenuController()
 {
-    //ctor
+    clearScrean();
+    init();
 }
 
 SalesmanMenuController::~SalesmanMenuController()
@@ -10,13 +11,13 @@ SalesmanMenuController::~SalesmanMenuController()
     //dtor
 }
 
-void init(){
-    SalemanView();
+void SalesmanMenuController::init(){
+    SalesmanMenuDisplay();
 
     char input;
     do{
     cin >> input;
-    while(input !='D'&& input != 'd' &&
+    }while(input !='D'&& input != 'd' &&
           input !='c'&& input != 'C' &&input !='q'&& input != 'Q');
 
     cout << "Please select your location: ";

@@ -1,7 +1,7 @@
 #ifndef SALESMANMENUCONTROLLER_H
 #define SALESMANMENUCONTROLLER_H
 
-#include "SalesmanMenuView.h"
+#include "MainMenuController.h"
 
 class SalesmanMenuController
 {

@@ -1,8 +1,7 @@
 #ifndef BAKERMENUCONTROLLER_H
 #define BAKERMENUCONTROLLER_H
 
-#include "BakerMenuView.h"
-using namespace BakerMenuView;
+#include "MainMenuController.h"
 
 
 class BakerMenuController

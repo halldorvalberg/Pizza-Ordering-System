@@ -1,6 +1,6 @@
 #include "CostumerMenuView.h"
 
-void CostumerMenuView::CostumerView(){
+void CostumerMenuView::CostumerMenuDisplay(){
     cout << "Customer Menu" << endl << endl;
 	cout << "What do you want to do? " << endl;
 	cout << "m: Orde a pizza from menu" << endl;

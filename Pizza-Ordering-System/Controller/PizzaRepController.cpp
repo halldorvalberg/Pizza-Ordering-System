@@ -2,7 +2,7 @@
 
 PizzaRepController::PizzaRepController()
 {
-    clear
+
 }
 
 PizzaRepController::~PizzaRepController()
