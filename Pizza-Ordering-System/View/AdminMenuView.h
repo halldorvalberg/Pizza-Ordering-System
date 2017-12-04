@@ -1,16 +1,13 @@
 #ifndef ADMINMENUVIEW_H
 #define ADMINMENUVIEW_H
 
+#include <iostream>
 
-class AdminMenuView
+using namespace std;
+
+namespace AdminMenuView
 {
-    public:
-        AdminMenuView();
-        virtual ~AdminMenuView();
-
-    protected:
-
-    private:
+   void AdminMenudisplay();
 };
 
 #endif // ADMINMENUVIEW_H

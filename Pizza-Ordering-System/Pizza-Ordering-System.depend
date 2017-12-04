@@ -43,10 +43,12 @@
 
 1512395087 c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\view\mainmenuview.h
 
-1512394652 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\adminmenucontroller.cpp
+1512397864 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\adminmenucontroller.cpp
 	"AdminMenuController.h"
 
-1512394651 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\adminmenucontroller.h
+1512397761 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\adminmenucontroller.h
+	"MainMenuController.h"
+	"DisplayString.h"
 
 1512394676 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\bakermenucontroller.cpp
 	"BakerMenuController.h"
@@ -61,11 +63,13 @@
 1512396421 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\mainmenucontroller.cpp
 	"MainMenuController.h"
 
-1512396421 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\mainmenucontroller.h
+1512397695 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\mainmenucontroller.h
 	<string>
 	<iostream>
 	"GlobalTools.h"
 	"MainMenuView.h"
+	"AdminMenuView.h"
+	"DisplayString.h"
 	"AdminMenuController.h"
 	"BakerMenuController.h"
 	"CostumerMenuController.h"
@@ -87,10 +91,11 @@
 1512395333 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\tools\globaltools.cpp
 	"GlobalTools.h"
 
-1512394814 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\view\adminmenuview.cpp
+1512397189 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\view\adminmenuview.cpp
 	"AdminMenuView.h"
 
-1512394814 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\view\adminmenuview.h
+1512397589 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\view\adminmenuview.h
+	<iostream>
 
 1512394828 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\view\costumermenuview.cpp
 	"CostumerMenuView.h"
@@ -114,4 +119,10 @@
 
 1512395681 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\view\salesmanmenuview.h
 	<iostream>
+
+1512397815 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\view\displaystring.h
+	<iostream>
+
+1512397824 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\view\displaystring.cpp
+	"DisplayString.h"
 
