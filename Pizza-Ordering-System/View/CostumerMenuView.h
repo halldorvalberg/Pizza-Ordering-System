@@ -2,15 +2,9 @@
 #define COSTUMERMENUVIEW_H
 
 
-class CostumerMenuView
+namespace CostumerMenuView
 {
-    public:
-        CostumerMenuView();
-        virtual ~CostumerMenuView();
-
-    protected:
-
-    private:
+    void CostumerView();
 };
 
 #endif // COSTUMERMENUVIEW_H
