@@ -39,7 +39,6 @@ void BakerMenuController::init(){
     }
 }
 void BakerMenuController::displayPizzas(){
-    string str;
     LocationRepo location;
     cout << "Please select your location" << endl;
     location.SelectLocation();
@@ -47,9 +46,10 @@ void BakerMenuController::displayPizzas(){
     //displayAllOrdersAtLocation();
 }
 void BakerMenuController::ChangePizzaStatus(){
+    int ordernr;
     displayPizzas();
-    cout << "Please select the order you are going to modify" << endl;
-    cout << "r: for ready" << endl <<"p: still in progress" << endl;
-    //selectPizzaOrder();
-    cout << "I do nothing yet" << endl;
+    cout << "Please select the order which is ready" << endl;
+    cin >> ordernr;
+    //some code here to display the pizza and change the status to ready
+    cout << "Order has been changed!" << endl;
 }
