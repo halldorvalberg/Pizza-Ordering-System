@@ -27,6 +27,8 @@ void PizzaRepController::init()
 
     if(input[0] == '1'){
         ///View Pizza Menu
+        clearScrean();
+        dispHeader();
         display_menu();
         outputstring("");
         outputstring("Enter any key to exit");

@@ -16,7 +16,6 @@ void GlobalView::dispHeader()
 void GlobalView::display_menu()
 {
 
-    dispHeader();
     outputstring("\tPizza Menu: ");
 
 
