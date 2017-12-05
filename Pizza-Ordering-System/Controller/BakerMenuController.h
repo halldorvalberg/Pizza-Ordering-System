@@ -10,6 +10,7 @@ class BakerMenuController
         BakerMenuController();
         virtual ~BakerMenuController();
         void displayPizzas();
+        void ChangePizzaStatus();
         void init();
 
     protected:
