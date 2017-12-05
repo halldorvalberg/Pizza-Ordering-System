@@ -1,19 +1,23 @@
 #ifndef LOCATIONS_H
 #define LOCATIONS_H
-
+#include <iostream>
+#include <string>
+using namespace std;
 
 class Locations
 {
     public:
-        Locations();
+        Locations(string location);
         virtual ~Locations();
         string getLocation();
-        friend ifstream& operator >> (ifstream& in, Locations place);
+        friend istream& operator >> (istream& in, Locations& place);
+        friend ostream& operator << (ostream& out, Locations& place);
 
+        string location;
     protected:
 
     private:
-        string location;
+
 };
 
 #endif // LOCATIONS_H

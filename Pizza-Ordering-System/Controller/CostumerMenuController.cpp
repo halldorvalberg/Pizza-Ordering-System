@@ -2,7 +2,8 @@
 
 CostumerMenuController::CostumerMenuController()
 {
-    //ctor
+    clearScrean();
+    init();
 }
 
 CostumerMenuController::~CostumerMenuController()
@@ -14,29 +15,29 @@ void CostumerMenuController::init(){
     do{
         CostumerMenuDisplay();
         cin >> input;
-        if (input == 'm' || input == 'M'){
-            OrderFromMenu();
-        }
-        else if(input == 'c' || input == 'C'){
-            customOrder();
-        }
-        else if (input == 'q' || input == 'Q'){
-            MainMenuController mmc;
-        }
-        else{
-            cout << "Invalid input, please try again." << endl;
-        }
     }while(input !='m'&& input != 'M' &&
           input !='c'&& input != 'C' &&input !='q'&& input != 'Q');
+    if (input == 'm' || input == 'M'){
+        OrderFromMenu();
+        CostumerMenuController cmc;
+    }
+    else if(input == 'c' || input == 'C'){
+        customOrder();
+        CostumerMenuController cmc;
+    }
+    else if (input == 'q' || input == 'Q'){
+            MainMenuController mmc;
+    }
+    else{
+        cout << "Invalid input, please try again." << endl;
+    }
 }
 
-void CostumerMenuController::customOrder(){
+void CostumerMenuController::customOrder(){ ///work in progress
     cout << "Custom order" << endl;
     cout << "Please select toppings for your pizza: ";
-    //displayToppings();
 }
-void CostumerMenuController::OrderFromMenu(){
+void CostumerMenuController::OrderFromMenu(){ ///work in progress
     cout << "Make a new pizza from menu" << endl;
-        cout << "Please select your pizza";
-        //displaymenu()
+    cout << "Please select your pizza";
 }

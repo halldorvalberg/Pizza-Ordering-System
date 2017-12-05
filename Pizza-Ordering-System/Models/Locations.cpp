@@ -1,8 +1,8 @@
 #include "Locations.h"
 
-Locations::Locations()
+Locations::Locations(string location)
 {
-    this->location = "";
+    this->location = location;
 }
 
 Locations::~Locations()
@@ -12,11 +12,11 @@ Locations::~Locations()
 string Locations::getLocation(){
     return this->location;
 }
-ifstream& operator >> (ifstream& in, Locations place){
+istream& operator >> (istream& in, Locations& place){
     in >> place.location;
     return in;
 }
-ostream& operator << (ostream& out, Locations place){
+ostream& operator << (ostream& out, Locations& place){
     out << place.location;
     return out;
 }

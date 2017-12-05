@@ -22,14 +22,15 @@ void BakerMenuController::init(){
           input !='c'&& input != 'C' &&input !='q'&& input != 'Q');
 
         outputstring("Please select your location: ");
-    //selectlocation();
+        BakerMenuController bmc;
     if (input == 'd' || input == 'D'){
         outputstring("Displaying all pizzas" );
-        //displaypizzas()
+        BakerMenuController bmc;
     }
     else if(input == 'c' || input == 'C'){
 
         cout << "Change a pizza" << endl;
+        BakerMenuController bmc;
     }
     else if (input == 'q' || input == 'Q'){
         MainMenuController mmc;

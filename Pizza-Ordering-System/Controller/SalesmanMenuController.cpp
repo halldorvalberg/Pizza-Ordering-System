@@ -22,14 +22,13 @@ void SalesmanMenuController::
           input !='c'&& input != 'C' &&input !='q'&& input != 'Q');
 
     cout << "Please select your location: ";
-    //selectlocation();
     if (input == 'd' || input == 'D'){
         cout << "Displaying all pizzas" << endl;
-        //displaypizzas()
+        SalesmanMenuController smc;
     }
     else if(input == 'c' || input == 'C'){
-
         cout << "Please select a pizza order" << endl;
+        SalesmanMenuController smc;
     }
     else if (input == 'q' || input == 'Q'){
         MainMenuController mmc;

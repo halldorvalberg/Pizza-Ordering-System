@@ -11,9 +11,27 @@ ToppingRepController::~ToppingRepController()
 }
 
 void ToppingRepController::add_topping_to_menu(){
+    string str;
+    int i;
 
+    cin >> str >> i;
+
+    Toppings topping(str, i);
+    ///write the content of this into a file
+    ofstream fout;
+    fout.open("Toppings_Menu_Binary.txt", ios::app);
+
+    if(fout.is_open()){
+    fout << str << "\t" << i << endl;
+    fout.close();
+    }
+    else{
+        cout << "File could not be opened!" << endl;
+    }
 }
 void ToppingRepController::remove_topping_from_menu(){
+    ///Remove a certain topping from menu, work in progress!!
+    cout << "I do nothing yet, replace me!!" << endl;
 }
 
 void ToppingRepController::init(){
