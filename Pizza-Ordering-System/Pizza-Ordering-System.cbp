@@ -51,6 +51,8 @@
 		<Unit filename="Controller/PizzaRepController.h" />
 		<Unit filename="Controller/SalesmanMenuController.cpp" />
 		<Unit filename="Controller/SalesmanMenuController.h" />
+		<Unit filename="Controller/ToppingRepController.cpp" />
+		<Unit filename="Controller/ToppingRepController.h" />
 		<Unit filename="Models/Pizza.cpp" />
 		<Unit filename="Models/Pizza.h" />
 		<Unit filename="Models/Toppings.cpp" />
@@ -73,6 +75,8 @@
 		<Unit filename="View/PizzaRepMenuView.h" />
 		<Unit filename="View/SalesmanMenuView.cpp" />
 		<Unit filename="View/SalesmanMenuView.h" />
+		<Unit filename="View/ToppingRepMenuView.cpp" />
+		<Unit filename="View/ToppingRepMenuView.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
