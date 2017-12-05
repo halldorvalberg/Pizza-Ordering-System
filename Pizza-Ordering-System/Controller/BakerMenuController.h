@@ -9,6 +9,7 @@ class BakerMenuController
     public:
         BakerMenuController();
         virtual ~BakerMenuController();
+        void displayPizzas();
         void init();
 
     protected:
