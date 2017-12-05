@@ -43,7 +43,7 @@ void BakerMenuController::displayPizzas(){
     cout << "Please select your location" << endl;
     location.SelectLocation();
     cout << "Displaying all pizza orders at your location" << endl;
-    //displayAllOrdersAtLocation();
+    //DisplayAllOrdersAtLocationBaker();
 }
 void BakerMenuController::ChangePizzaStatus(){
     int ordernr;

@@ -16,7 +16,7 @@
 					<Add directory="Controller" />
 					<Add directory="View" />
 					<Add directory="Tools" />
-					<Add directory="Exceptions" />
+					<Add directory="Repos" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -29,6 +29,7 @@
 					<Add directory="Controller" />
 					<Add directory="View" />
 					<Add directory="Tools" />
+					<Add directory="Repos" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -62,10 +63,16 @@
 		<Unit filename="Exceptions/ToppingNameError.h" />
 		<Unit filename="Exceptions/ToppingPriceError.cpp" />
 		<Unit filename="Exceptions/ToppingPriceError.h" />
+		<Unit filename="Models/Locations.cpp" />
+		<Unit filename="Models/Locations.h" />
 		<Unit filename="Models/Pizza.cpp" />
 		<Unit filename="Models/Pizza.h" />
 		<Unit filename="Models/Toppings.cpp" />
 		<Unit filename="Models/Toppings.h" />
+		<Unit filename="Repos/LocationRepo.cpp" />
+		<Unit filename="Repos/LocationRepo.h" />
+		<Unit filename="Repos/OrderRepo.cpp" />
+		<Unit filename="Repos/OrderRepo.h" />
 		<Unit filename="Tools/GlobalTools.cpp" />
 		<Unit filename="Tools/GlobalTools.h" />
 		<Unit filename="View/AdminMenuView.cpp" />

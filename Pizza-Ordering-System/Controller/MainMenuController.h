@@ -27,6 +27,8 @@
 #include "ToppingNameError.h"
 #include "ToppingPriceError.h"
 #include "Toppings.h"
+#include "OrderRepo.h"
+#include "Locations.h"
 
 using namespace std;
 using namespace ToppingRepMenuView;

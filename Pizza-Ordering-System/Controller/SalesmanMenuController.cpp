@@ -11,8 +11,7 @@ SalesmanMenuController::~SalesmanMenuController()
     //dtor
 }
 
-void SalesmanMenuController::
-    init(){
+void SalesmanMenuController::init(){
     SalesmanMenuDisplay();
 
     char input;
@@ -36,4 +35,19 @@ void SalesmanMenuController::
     else{
         cout << "Invalid input" << endl;
     }
+}
+void SalesmanMenuController::displayPizzas(){
+    LocationRepo location;
+    cout << "Please select your location" << endl;
+    location.SelectLocation();
+    cout << "Displaying all pizza orders at your location" << endl;
+    //DisplayAllOrdersAtLocationSalesman();
+}
+void SalesmanMenuController::CheckoutPizza(){
+    int ordernr;
+    displayPizzas();
+    cout << "Please select the order which" << endl;
+    cin >> ordernr;
+    //changeOrderSalesman();
+    cout << "Order has been changed!" << endl;
 }
