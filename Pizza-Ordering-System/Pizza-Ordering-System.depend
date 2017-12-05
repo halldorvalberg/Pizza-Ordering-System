@@ -83,13 +83,13 @@
 1512399739 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\bakermenucontroller.h
 	"MainMenuController.h"
 
-1512491054 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\costumermenucontroller.cpp
+1512494214 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\costumermenucontroller.cpp
 	"CostumerMenuController.h"
 
 1512490205 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\costumermenucontroller.h
 	"MainMenuController.h"
 
-1512491058 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\mainmenucontroller.cpp
+1512492354 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\mainmenucontroller.cpp
 	"MainMenuController.h"
 
 1512488469 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\mainmenucontroller.h
@@ -118,9 +118,12 @@
 	"ToppingPriceError.h"
 	"Toppings.h"
 
-1512491040 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\tools\globaltools.h
+1512494244 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\tools\globaltools.h
 	<stdlib.h>
 	<cstdlib>
+	<fstream>
+	<string>
+	"Pizza.h"
 
 1512398977 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\salesmanmenucontroller.h
 	"MainMenuController.h"
@@ -132,7 +135,7 @@
 	<iostream>
 	"MainMenuController.h"
 
-1512491040 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\tools\globaltools.cpp
+1512494222 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\tools\globaltools.cpp
 	"GlobalTools.h"
 
 1512399938 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\view\adminmenuview.cpp
@@ -184,7 +187,7 @@
 	"DisplayString.h"
 	"GlobalTools.h"
 
-1512490553 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\view\globalview.cpp
+1512491082 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\view\globalview.cpp
 	"GlobalView.h"
 
 1512487679 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\view\pizzarepmenuview.h

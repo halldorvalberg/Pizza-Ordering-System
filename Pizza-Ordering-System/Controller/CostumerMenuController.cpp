@@ -31,10 +31,15 @@ void CostumerMenuController::init(){
         ///View Order
         view_order();
         //global view
-        outputstring("Continu");
-        cin >> input;
-
+        outputstring("Place order (y/n)");
+        char confirm;
+        cin >> confirm;
+        if(confirm == 'y' || confirm == 'Y') {
+            add_all_to_file("Costumer_Order_Binary.dat", "Ordered_Pizzas_Binary.dat");
+        }
+        else{
         CostumerMenuController cmc;
+        }
     }
     else if (input == 'q' || input == 'Q'){
         MainMenuController mmc;
@@ -47,17 +52,17 @@ void CostumerMenuController::OrderFromMenu(){ ///WIP
     display_menu();
 
     outputstring("\nSelect pizza to add to order or 0 (zero) to return:");
-    int input;
+    int menu;
     do{
-    cin >> input;
-    }while(0 > input);
+    cin >> menu;
+    }while(0 > menu);
 
-    if(input == 0){
+    if(menu == 0){
         CostumerMenuController cmc;
     }
     else{
         //ATH hvort innslag samvarist lista
-        add_to_order(input);
+        add_to_order(menu);
     }
 }
 
@@ -70,20 +75,36 @@ void CostumerMenuController::customOrder(){ ///work in progress
 
 void CostumerMenuController::add_to_order(int e)
 {
-    Pizza order;
+    Pizza pizza;
+
     ifstream fin;
 
     fin.open("Pizza_Menu_Binary.dat", ios::binary);
 
-    fin.read((char*)(&order), sizeof(Pizza) * e-1);
+    fin.seekg(0, fin.end);
+    int records = fin.tellg() / sizeof(Pizza);
+    fin.seekg(0, fin.beg);
 
+    if(records >= e) {
+
+    for(int i = 0; i < e; i++){
+        fin.read((char*)(&pizza), sizeof(Pizza));
+    }
     fin.close();
 
     ofstream fout;
 
     fout.open("Costumer_Order_Binary.dat", ios::binary|ios::app);
 
-    fout.write((char*)(&order), sizeof(Pizza));
+    fout.write((char*)(&pizza), sizeof(Pizza));
 
     fout.close();
+
+    }
+    else {
+        outputstring("Fatal ERROR");
+    }
+
+
+
 }

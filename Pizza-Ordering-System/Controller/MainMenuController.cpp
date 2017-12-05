@@ -4,6 +4,7 @@ MainMenuController::MainMenuController()
 {
     clearScreen();
     dispHeader();
+    clear_order("Costumer_Order_Binary.dat");
     init();
 }
 
@@ -39,7 +40,7 @@ void MainMenuController::init()
         SalesmanMenuController amc;
     }
     else if( inputString == "q"){
-//        exitAplication();
+        exitApplication();
     }
 
 }

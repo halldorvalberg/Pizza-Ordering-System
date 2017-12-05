@@ -3,11 +3,19 @@
 
 #include <stdlib.h>
 #include <cstdlib>
+#include <fstream>
+#include <string>
+
+#include "Pizza.h"
+
+using namespace std;
 
 namespace GlobalTools
 {
     void clearScreen();
     void exitApplication();
+    void clear_order(string e);
+    void add_all_to_file(string data, string location);
 };
 
 #endif // GLOBALTOOLS_H
