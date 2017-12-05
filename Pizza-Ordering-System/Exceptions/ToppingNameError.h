@@ -1,6 +1,8 @@
 #ifndef TOPPINGNAMEERROR_H
 #define TOPPINGNAMEERROR_H
 
+
+#include <iostream>
 #include <string>
 using namespace std;
 

@@ -25,6 +25,10 @@
 #include "Pizza.h"
 #include "Toppings.h"
 
+#include "ToppingNameError.h"
+#include "ToppingPriceError.h"
+#include "Toppings.h"
+
 using namespace std;
 using namespace ToppingRepMenuView;
 using namespace PizzaRepMenuView;

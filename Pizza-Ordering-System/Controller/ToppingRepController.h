@@ -2,9 +2,6 @@
 #define TOPPINGREPCONTROLLER_H
 
 #include "MainMenuController.h"
-#include "ToppingNameError.h"
-#include "ToppingPriceError.h"
-#include "Toppings.h"
 
 
 class ToppingRepController
