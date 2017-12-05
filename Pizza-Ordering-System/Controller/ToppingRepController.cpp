@@ -13,10 +13,8 @@ ToppingRepController::~ToppingRepController()
 void ToppingRepController::add_topping_to_menu(){
     string str;
     int i;
-
-    cin >> str >> i;
-
     Toppings topping(str, i);
+    AreToppingsValid();
     ///write the content of this into a file
     ofstream fout;
     fout.open("Toppings_Menu_Binary.txt", ios::app);
@@ -67,5 +65,28 @@ void ToppingRepController::init(){
     else if (input[0] == 'q'){
         ///Return to Admin Menu
         AdminMenuController amc;
+    }
+}
+
+void ToppingRepController::AreToppingsValid(){
+    try{
+        Toppings topping;
+//        cin >> topping;
+    if(topping.gettoppingprice() < 0){
+        throw ToppingPriceError("Invalid topping price!");
+    }
+
+    string str = topping.gettoppingname();
+//        for(unsigned int i = 0; i < str.length(); i++){
+//        if(!str[i].charAt(b)){
+  //          throw ToppingNameError("Invalid topping name!");
+            //}
+        //}
+    }
+    catch(ToppingNameError n){
+        cout << n.getmessage() << endl;
+    }
+    catch(ToppingPriceError p){
+        cout << p.getmessage() << endl;
     }
 }

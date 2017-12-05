@@ -261,12 +261,15 @@
 1512399152 source:c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\view\salesmanmenuview.cpp
 	"SalesmanMenuView.h"
 
-1512481581 source:c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\controller\toppingrepcontroller.cpp
+1512484713 source:c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\controller\toppingrepcontroller.cpp
 	"ToppingRepController.h"
 
-1512479687 c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\controller\toppingrepcontroller.h
+1512484414 c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\controller\toppingrepcontroller.h
 	"ToppingRepMenuView.h"
 	"MainMenuController.h"
+	"ToppingNameError.h"
+	"ToppingPriceError.h"
+	"Toppings.h"
 
 1512479750 c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\view\toppingrepmenuview.h
 	<iostream>
@@ -297,5 +300,11 @@
 	"ToppingNameError.h"
 
 1512483161 c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingnameerror.h
+	<string>
+
+1512483195 source:c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingpriceerror.cpp
+	"ToppingPriceError.h"
+
+1512483161 c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingpriceerror.h
 	<string>
 
