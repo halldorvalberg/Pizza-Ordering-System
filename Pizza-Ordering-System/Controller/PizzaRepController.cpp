@@ -2,7 +2,7 @@
 
 PizzaRepController::PizzaRepController()
 {
-    clearScrean();
+    clearScreen();
     dispHeader();
     init();
 }
@@ -19,7 +19,7 @@ void PizzaRepController::init()
     do{
         PizzaRepMenuDisplay();
         cin >> input;
-        clearScrean();
+        clearScreen();
     }while(input[0] != '1' &&
            input[0] != '2' &&
            input[0] != '3' &&
@@ -27,7 +27,7 @@ void PizzaRepController::init()
 
     if(input[0] == '1'){
         ///View Pizza Menu
-        clearScrean();
+        clearScreen();
         dispHeader();
         display_menu();
         outputstring("");

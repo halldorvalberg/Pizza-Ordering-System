@@ -2,7 +2,7 @@
 
 SalesmanMenuController::SalesmanMenuController()
 {
-    clearScrean();
+    clearScreen();
     init();
 }
 

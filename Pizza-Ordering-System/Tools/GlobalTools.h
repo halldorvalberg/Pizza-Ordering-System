@@ -6,7 +6,7 @@
 
 namespace GlobalTools
 {
-    void clearScrean();
+    void clearScreen();
     void exitApplication();
 };
 

@@ -2,7 +2,7 @@
 
 AdminMenuController::AdminMenuController()
 {
-    clearScrean();
+    clearScreen();
     dispHeader();
     init();
 }

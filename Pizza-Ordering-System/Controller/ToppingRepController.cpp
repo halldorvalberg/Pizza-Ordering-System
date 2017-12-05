@@ -38,7 +38,7 @@ void ToppingRepController::init(){
     do{
         ToppingRepMenuDisplay();
         cin >> input;
-        clearScrean();
+        clearScreen();
     }while(input[0] != '1' &&
            input[0] != '2' &&
            input[0] != '3' &&

@@ -1,7 +1,7 @@
 #include "GlobalTools.h"
 
 
-void GlobalTools::clearScrean()
+void GlobalTools::clearScreen()
 {
     system("CLS");
 }

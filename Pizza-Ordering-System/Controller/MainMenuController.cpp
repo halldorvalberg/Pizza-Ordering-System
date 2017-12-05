@@ -2,7 +2,7 @@
 
 MainMenuController::MainMenuController()
 {
-    clearScrean();
+    clearScreen();
     dispHeader();
     init();
 }

@@ -38,3 +38,28 @@ void GlobalView::display_menu()
     fin.close();
 
 }
+
+void GlobalView::view_order()
+{
+    clearScreen();
+    dispHeader();
+
+    outputstring("Your Order: ");
+
+    Pizza pizza;
+
+    ifstream fin;
+
+    fin.open("Costumer_Order_Binary.dat", ios::binary);
+
+    fin.seekg(0, fin.end);
+    int records = fin.tellg() / sizeof(Pizza);
+    fin.seekg(0, fin.beg);
+
+    for(int i = 0; i < records; i++){
+        fin.read((char*)(&pizza), sizeof(Pizza));
+        cout << "Pizza nr " << i+1 << ": " << pizza << endl;
+
+    }
+    fin.close();
+}
