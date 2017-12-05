@@ -15,27 +15,23 @@ void GlobalView::dispHeader()
 
 void GlobalView::display_menu()
 {
+    int i = 1;
+    string str;
+    fstream fin;
 
-    dispHeader();
-    outputstring("\tPizza Menu: ");
+    cout << "\tThe pizza menu" << endl << endl;
+    cout << ("            Name:\tPrice:\tsize: ") << endl;
 
-
-    //Read menu from binary file
-    Pizza pizza;
-
-    ifstream fin;
-
-    fin.open("Pizza_Menu_Binary.dat", ios::binary);
-
-    fin.seekg(0, fin.end);
-    int records = fin.tellg() / sizeof(Pizza);
-    fin.seekg(0, fin.beg);
-
-    for(int i = 0; i < records; i++){
-        fin.read((char*)(&pizza), sizeof(Pizza));
-        cout << "Pizza nr " << i+1 << ": " << pizza << endl;
-
+    fin.open("Pizza_Menu_Binary.txt");
+    if(fin.is_open()) {
+        while(!fin.eof()) {
+            getline(fin, str);
+            cout << "Pizza nr " << i << ": " <<  str << endl;
+            i++;
+        }
+        fin.close();
     }
-    fin.close();
-
+    else {
+        cout << "Unable to read from file!" << endl;
+    }
 }

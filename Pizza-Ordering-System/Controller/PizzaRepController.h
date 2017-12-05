@@ -2,7 +2,6 @@
 #define PIZZAREPCONTROLLER_H
 
 #include "MainMenuController.h"
-#include "Pizza.h"
 
 class PizzaRepController
 {

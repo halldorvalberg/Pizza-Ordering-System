@@ -1,8 +1,10 @@
 #ifndef TOPPINGREPCONTROLLER_H
 #define TOPPINGREPCONTROLLER_H
 
+#include "ToppingRepMenuView.h"
 #include "MainMenuController.h"
 
+using namespace ToppingRepMenuView;
 
 class ToppingRepController
 {

@@ -3,6 +3,10 @@
 
 #include "MainMenuController.h"
 
+#include "DisplayString.h"
+
+using namespace DisplayString;
+
 class AdminMenuController
 {
     public:
