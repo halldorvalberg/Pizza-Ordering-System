@@ -5,7 +5,6 @@
 #include<iostream>
 #include<fstream>
 #include<vector>
-#include<iterator>
 
 #include "GlobalTools.h"
 #include "MainMenuView.h"
@@ -16,6 +15,7 @@
 #include "SalesmanMenuView.h"
 #include "GlobalView.h"
 #include "PizzaRepMenuView.h"
+#include "ToppingRepMenuView.h"
 
 #include "AdminMenuController.h"
 #include "BakerMenuController.h"
@@ -25,6 +25,8 @@
 #include "Pizza.h"
 #include "Toppings.h"
 
+using namespace std;
+using namespace ToppingRepMenuView;
 using namespace PizzaRepMenuView;
 using namespace GlobalView;
 using namespace SalesmanMenuView;
@@ -34,7 +36,6 @@ using namespace DisplayString;
 using namespace AdminMenuView;
 using namespace MainMenuView;
 using namespace GlobalTools;
-using namespace std;
 
 
 class MainMenuController

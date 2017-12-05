@@ -4,6 +4,10 @@
 #include <iostream>
 #include <fstream>
 
+#include "Pizza.h"
+#include "DisplayString.h"
+
+using namespace DisplayString;
 using namespace std;
 
 namespace GlobalView

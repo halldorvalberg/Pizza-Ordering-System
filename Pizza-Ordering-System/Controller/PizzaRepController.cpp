@@ -36,6 +36,8 @@ void PizzaRepController::init()
     else if (input[0] == '2'){
         ///Add item to pizza menu
         add_to_menu();
+        outputstring("Enter any key to continue");
+        cin >> input;
         PizzaRepController prc;
     }
     else if (input[0] == '3'){
@@ -52,29 +54,35 @@ void PizzaRepController::init()
 
 void PizzaRepController::add_to_menu()
 {
+    int nr;
+    string name, price, size;
+    vector<string> toppings;
 
-    string str;
-    int i;
-    char c;
+    dispHeader();
 
-    cin >> str >> i >> c;
-
-    Pizza pizza(str, i, c);
+    Pizza pizza;
+    cin >> pizza;
+    outputstring("\nYour pizza: \n");
+    cout << pizza;
 
     ofstream fout;
-    fout.open("Pizza_Menu_Binary.txt", ios::app);
 
-    if(fout.is_open()){
-    fout << str << "\t" << i << "\t" << c << endl;
+    fout.open("Pizza_Menu_Binary.dat", ios::binary|ios::app);
+
+    fout.write((char*)(&pizza), sizeof(Pizza));
+
     fout.close();
-    }
-    else{
-        cout << "File could not be opened!" << endl;
-    }
+
+    outputstring("Your Pizza has been added to the menu\n");
+
+
 }
 
 void PizzaRepController::remove_element_from_menu()
 {
+    //Bilað
+    outputstring("Bilað");
+    /*
     display_menu();
     int counter;
     int nr;
@@ -115,4 +123,5 @@ void PizzaRepController::remove_element_from_menu()
         fout << temp[i] << endl;
     }
     fout.close();
+    */
 }

@@ -2,8 +2,7 @@
 
 void CostumerMenuView::CostumerMenuDisplay(){
     cout << "Customer Menu" << endl << endl;
-	cout << "What do you want to do? " << endl;
-	cout << "m: Orde a pizza from menu" << endl;
-	cout << "c: Custom order" << endl;
+	cout << "m: View Pizza Menu" << endl;
+	cout << "o: View your Order" << endl;
 	cout << "q: Go back to main menu" << endl;
 }
