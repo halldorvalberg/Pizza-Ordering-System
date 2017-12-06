@@ -17,7 +17,7 @@ void ToppingRepController::add_topping_to_menu(){
     AreToppingsValid();
     ///write the content of this into a file
     ofstream fout;
-    fout.open("Toppings_Menu_Binary.txt", ios::app);
+    fout.open("Toppings_Menu_Binary.dar", ios::app|ios::binary);
 
     if(fout.is_open()){
     fout << str << "\t" << i << endl;
@@ -46,7 +46,7 @@ void ToppingRepController::init(){
 
     if(input[0] == '1'){
         ///View Toppings Menu
-        display_menu();
+        display_toppings();
         outputstring("");
         outputstring("Enter any key to exit");
         cin >> input;
@@ -89,4 +89,20 @@ void ToppingRepController::AreToppingsValid(){
     catch(ToppingPriceError p){
         cout << p.getmessage() << endl;
     }
+}
+void ToppingRepController::displayToppings(){
+    Toppings topping;
+    ifstream fin;
+    fin.open("Toppings_Menu_Binary.dat", ios::binary);
+
+    fin.seekg(0, fin.end);
+    int records = fin.tellg() / sizeof(Toppings);
+    fin.seekg(0, fin.beg);
+
+    for(int i = 0; i < records; i++){
+        fin.read((char*)(&topping), sizeof(Toppings));
+        cout << "Topping nr " << i+1 << ": " << topping << endl;
+
+    }
+    fin.close();
 }
