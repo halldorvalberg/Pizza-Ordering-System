@@ -2,6 +2,8 @@
 #define LOCATIONREPO_H
 
 #include "Locations.h"
+#include <fstream>
+#include <string>
 
 class LocationRepo
 {

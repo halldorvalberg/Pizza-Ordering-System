@@ -2,6 +2,7 @@
 #define ORDERREPO_H
 
 #include "LocationRepo.h"
+#include "MainMenuController.h"
 
 class OrderRepo
 {
@@ -9,7 +10,7 @@ class OrderRepo
         OrderRepo();
         virtual ~OrderRepo();
         void DisplayAllOrdersAtLocationBaker();
-        void DisplayAllOrdersAtLocationSalesman()
+        void DisplayAllOrdersAtLocationSalesman();
         void changeOrderBaker();
         void changeOrderSalesman();
 

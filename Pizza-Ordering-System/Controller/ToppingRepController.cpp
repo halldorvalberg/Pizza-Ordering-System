@@ -13,11 +13,12 @@ ToppingRepController::~ToppingRepController()
 void ToppingRepController::add_topping_to_menu(){
     string str;
     int i;
+    cin >> str >> i;
     Toppings topping(str, i);
     AreToppingsValid();
     ///write the content of this into a file
     ofstream fout;
-    fout.open("Toppings_Menu_Binary.dar", ios::app|ios::binary);
+    fout.open("Toppings_Menu_Binary.dat", ios::app|ios::binary);
 
     if(fout.is_open()){
     fout << str << "\t" << i << endl;
@@ -46,7 +47,7 @@ void ToppingRepController::init(){
 
     if(input[0] == '1'){
         ///View Toppings Menu
-        display_toppings();
+        displayToppings();
         outputstring("");
         outputstring("Enter any key to exit");
         cin >> input;
@@ -69,27 +70,28 @@ void ToppingRepController::init(){
 }
 
 void ToppingRepController::AreToppingsValid(){
-    try{
+  /*  try{
         Toppings topping;
-//        cin >> topping;
+        cin >> topping;
     if(topping.gettoppingprice() < 0){
         throw ToppingPriceError("Invalid topping price!");
     }
 
     string str = topping.gettoppingname();
-//        for(unsigned int i = 0; i < str.length(); i++){
-//        if(!str[i].charAt(b)){
-  //          throw ToppingNameError("Invalid topping name!");
-            //}
-        //}
+        for(unsigned int i = 0; i < str.length(); i++){
+        if(!str[i].charAt(b)){
+            throw ToppingNameError("Invalid topping name!");
+            }
+        }
     }
     catch(ToppingNameError n){
         cout << n.getmessage() << endl;
     }
     catch(ToppingPriceError p){
         cout << p.getmessage() << endl;
-    }
+    }*/
 }
+
 void ToppingRepController::displayToppings(){
     Toppings topping;
     ifstream fin;
@@ -101,8 +103,7 @@ void ToppingRepController::displayToppings(){
 
     for(int i = 0; i < records; i++){
         fin.read((char*)(&topping), sizeof(Toppings));
-        cout << "Topping nr " << i+1 << ": " << topping << endl;
-
+//        cout << "Topping nr " << i+1 << ": " << topping << endl;
     }
     fin.close();
 }

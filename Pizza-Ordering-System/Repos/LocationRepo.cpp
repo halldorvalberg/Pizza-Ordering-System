@@ -10,24 +10,32 @@ LocationRepo::~LocationRepo()
     //dtor
 }
 void LocationRepo::AddLocation(){
-    Locations location;
+    string str;
+    Locations location(str);
+    cin >> str;
     ofstream fout;
+
     fout.open("Locations.txt", ios::app);
-    if(fout.isopen()){
-        fout << location;
+    if(fout.is_open()){
+        fout << str;
         fout.close();
+    }
+    else{
+        cout << "File is not open!" << endl;
     }
 }
 void LocationRepo::DisplayAllLocations(){
-    Locations location;
-    string str;
+    string stri, str;
+    Locations location(stri);
     ifstream fin;
     fin.open("Locations.txt");
-    while(!fin.eof()){
-        str.getline(fin, str);
-        cout << location << endl;
-    }
+    if(fin.is_open()){
+        while(!fin.eof()){
+//            str.getline(fin, str);
+            cout << location << endl;
+        }
     fin.close();
+    }
 }
 
 void LocationRepo::selectLocation(){

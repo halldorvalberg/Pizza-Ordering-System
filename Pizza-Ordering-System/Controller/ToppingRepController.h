@@ -2,6 +2,8 @@
 #define TOPPINGREPCONTROLLER_H
 
 #include "MainMenuController.h"
+#include <iostream>
+using namespace std;
 
 
 class ToppingRepController
@@ -12,6 +14,7 @@ class ToppingRepController
         void add_topping_to_menu();
         void remove_topping_from_menu();
         void AreToppingsValid();
+        void displayToppings();
 
     protected:
 

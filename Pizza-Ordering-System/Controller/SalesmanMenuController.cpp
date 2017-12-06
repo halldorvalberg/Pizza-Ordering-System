@@ -39,7 +39,7 @@ void SalesmanMenuController::init(){
 void SalesmanMenuController::displayPizzas(){
     LocationRepo location;
     cout << "Please select your location" << endl;
-    location.SelectLocation();
+    location.selectLocation();
     cout << "Displaying all pizza orders at your location" << endl;
     //DisplayAllOrdersAtLocationSalesman();
 }
