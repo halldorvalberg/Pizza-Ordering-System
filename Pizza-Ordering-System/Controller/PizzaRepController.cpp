@@ -56,7 +56,6 @@ void PizzaRepController::init()
 
 void PizzaRepController::add_to_menu()
 {
-    int nr;
     string name, price, size;
     vector<string> toppings;
 
@@ -64,6 +63,7 @@ void PizzaRepController::add_to_menu()
 
     Pizza pizza;
     cin >> pizza;
+    validPizzaInput(pizza);
     outputstring("\nYour pizza: \n");
     cout << pizza;
 
@@ -127,7 +127,38 @@ void PizzaRepController::remove_element_from_menu()
     */
 }
 
-void validPizzaInput(){
+void PizzaRepController::validPizzaInput(Pizza& pizza){
+    string name, price;
+    int number;
+   // number = pizza.getnumber();
+   // name = pizza.getname();
+   // price = pizza.getprice();
     try{
+        cin >> number;
+        if (number < 0){
+            cout << "Invalid number" << endl;
+        }
+        cin >> price;
+        for (unsigned int i = 0; i < price.size(); i++){
+            if(!isdigit(price[i])){
+                throw PizzaPriceError("Invalid price");
+            }
+        }
+
+        cin >> name;
+        for(unsigned int i = 0; i < name.size(); i++){
+            if(!islower(name[i])&& !isupper(name[i])){
+                throw PizzaNameError("Invalid name");
+            }
+        }
+    }
+    catch(PizzaNameError pn){
+        cout << pn.getmessage() << endl;
+        add_to_menu();
+
+    }
+    catch(PizzaPriceError pe){
+        cout << pe.getmessage() << endl;
+        add_to_menu();
     }
 }

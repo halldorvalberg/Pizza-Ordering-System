@@ -38,16 +38,18 @@ void SalesmanMenuController::init(){
 }
 void SalesmanMenuController::displayPizzas(){
     LocationRepo location;
+    OrderRepo order;
     cout << "Please select your location" << endl;
     location.selectLocation();
     cout << "Displaying all pizza orders at your location" << endl;
-    //DisplayAllOrdersAtLocationSalesman();
+    order.DisplayAllOrdersAtLocationSalesman();
 }
 void SalesmanMenuController::CheckoutPizza(){
     int ordernr;
+    OrderRepo order;
     displayPizzas();
     cout << "Please select the order which" << endl;
     cin >> ordernr;
-    //changeOrderSalesman();
+    order.changeOrderSalesman();
     cout << "Order has been changed!" << endl;
 }

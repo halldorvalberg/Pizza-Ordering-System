@@ -13,7 +13,7 @@ class ToppingRepController
         virtual ~ToppingRepController();
         void add_topping_to_menu();
         void remove_topping_from_menu();
-        void AreToppingsValid();
+        void AreToppingsValid(Toppings& topping);
         void displayToppings();
 
     protected:

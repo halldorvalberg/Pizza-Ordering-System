@@ -14,8 +14,6 @@ class Pizza
         Pizza();
         virtual ~Pizza();
 
-
-       // int getpizzasize();
        // int getpizzaprice();
        // void addtopping();
 
@@ -27,7 +25,7 @@ class Pizza
     private:
         int nr;
         char name[50];
-        char price[10];
+        char price[5];
         char size[10];
         //vector<string> toppings;
 };

@@ -23,10 +23,6 @@ string Pizza::getpizzaname(){
     return this->name;
 }
 
-int Pizza::getpizzasize(){
-    return this->size;
-}
-
 int Pizza::getpizzaprice(){
     return this->price;
 }

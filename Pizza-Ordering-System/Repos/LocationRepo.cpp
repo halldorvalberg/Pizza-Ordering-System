@@ -26,15 +26,20 @@ void LocationRepo::AddLocation(){
 }
 void LocationRepo::DisplayAllLocations(){
     string stri, str;
+    int counter = 1;
     Locations location(stri);
     ifstream fin;
     fin.open("Locations.txt");
     if(fin.is_open()){
         while(!fin.eof()){
             getline(fin, str);
-            cout << str << endl;
+            cout << counter  << " " << str << endl;
+            counter++;
         }
     fin.close();
+    }
+    else{
+        cout << "File is not open" << endl; ///throw FileOpenException()
     }
 
 }

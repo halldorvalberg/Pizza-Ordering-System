@@ -17,6 +17,7 @@
 					<Add directory="View" />
 					<Add directory="Tools" />
 					<Add directory="Repos" />
+					<Add directory="Exceptions" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -30,6 +31,7 @@
 					<Add directory="View" />
 					<Add directory="Tools" />
 					<Add directory="Repos" />
+					<Add directory="Exceptions" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -55,6 +57,8 @@
 		<Unit filename="Controller/SalesmanMenuController.h" />
 		<Unit filename="Controller/ToppingRepController.cpp" />
 		<Unit filename="Controller/ToppingRepController.h" />
+		<Unit filename="Exceptions/FileOpenException.cpp" />
+		<Unit filename="Exceptions/FileOpenException.h" />
 		<Unit filename="Exceptions/PizzaNameError.cpp" />
 		<Unit filename="Exceptions/PizzaNameError.h" />
 		<Unit filename="Exceptions/PizzaPriceError.cpp" />

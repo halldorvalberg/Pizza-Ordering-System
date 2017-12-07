@@ -15,17 +15,18 @@ void ToppingRepController::add_topping_to_menu(){
     int i;
     cin >> str >> i;
     Toppings topping(str, i);
-    AreToppingsValid();
+    AreToppingsValid(topping); ///check if error is in the input
     ///write the content of this into a file
     ofstream fout;
+
     fout.open("Toppings_Menu_Binary.dat", ios::app|ios::binary);
 
     if(fout.is_open()){
-    fout << str << "\t" << i << endl;
-    fout.close();
+        fout << str << "\t" << i << endl;
+        fout.close();
     }
     else{
-        cout << "File could not be opened!" << endl;
+        cerr << "File is not open" << endl;
     }
 }
 void ToppingRepController::remove_topping_from_menu(){
@@ -69,29 +70,32 @@ void ToppingRepController::init(){
     }
 }
 
-void ToppingRepController::AreToppingsValid(){
-    outputstring("Bilad");
-  /*  try{
-        Toppings topping;
-        cin >> topping;
-    if(topping.gettoppingprice() < 0){
+void ToppingRepController::AreToppingsValid(Toppings& topping){
+    ///holy mac n cheese! ég náði þessu :O
+    int price = topping.gettoppingprice();
+    string str = topping.gettoppingname();
+
+    try{
+
+    if(price < 0){
         throw ToppingPriceError("Invalid topping price!");
     }
-
-    string str = topping.gettoppingname();
-        for(unsigned int i = 0; i < str.length(); i++){
-        if(!str[i].charAt(b)){
+    for(unsigned int i = 0; i < str.length(); i++){
+        if(!islower(str[i])&& !isupper(str[i])){
             throw ToppingNameError("Invalid topping name!");
+            break;
             }
         }
     }
     catch(ToppingNameError n){
         cout << n.getmessage() << endl;
+        add_topping_to_menu();
     }
+
     catch(ToppingPriceError p){
         cout << p.getmessage() << endl;
-    ToppingRepController::addtoppingtomenu();
-    }*/
+        add_topping_to_menu();
+    }
 }
 
 void ToppingRepController::displayToppings(){

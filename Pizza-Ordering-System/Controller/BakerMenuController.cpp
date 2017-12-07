@@ -17,12 +17,11 @@ void BakerMenuController::init(){
     do{
         BakerMenuDisplay();
         cin >> input;
-    }while(input !='D'&& input != 'd' &&
-          input !='c'&& input != 'C' &&input !='q'&& input != 'Q');
-        outputstring("Please select your location: ");
-        BakerMenuController bmc;
+    }while(input != 'D'&& input != 'd' &&
+          input != 'c'&& input != 'C' &&
+          input != 'q'&& input != 'Q');
     if (input == 'd' || input == 'D'){
-        outputstring("Displaying all pizzas" );
+        outputstring("Displaying all pizzas at your current location" );
         displayPizzas();
         BakerMenuController bmc;
     }
@@ -39,17 +38,22 @@ void BakerMenuController::init(){
     }
 }
 void BakerMenuController::displayPizzas(){
+    int bla;
     LocationRepo location;
+    OrderRepo order;
     cout << "Please select your location" << endl;
-    location.selectLocation();
+    location.DisplayAllLocations();
+    cin >> bla;
     cout << "Displaying all pizza orders at your location" << endl;
-    //DisplayAllOrdersAtLocationBaker();
+    order.DisplayAllOrdersAtLocationBaker();
 }
 void BakerMenuController::ChangePizzaStatus(){
     int ordernr;
+    OrderRepo order;
     displayPizzas();
     cout << "Please select the order which is ready" << endl;
     cin >> ordernr;
     //some code here to display the pizza and change the status to ready
+    order.changeOrderBaker();
     cout << "Order has been changed!" << endl;
 }
