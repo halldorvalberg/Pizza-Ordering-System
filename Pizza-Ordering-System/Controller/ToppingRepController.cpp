@@ -70,6 +70,7 @@ void ToppingRepController::init(){
 }
 
 void ToppingRepController::AreToppingsValid(){
+    outputstring("Bilad");
   /*  try{
         Toppings topping;
         cin >> topping;
@@ -89,6 +90,7 @@ void ToppingRepController::AreToppingsValid(){
     }
     catch(ToppingPriceError p){
         cout << p.getmessage() << endl;
+    ToppingRepController::addtoppingtomenu();
     }*/
 }
 

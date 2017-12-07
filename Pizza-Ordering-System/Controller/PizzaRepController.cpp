@@ -116,7 +116,6 @@ void PizzaRepController::remove_element_from_menu()
     ///Selected element removed
     temp.erase(temp.begin()+nr-1);
 
-
     ///Refill file without selected element
     counter = temp.size();
     ofstream fout;
@@ -126,4 +125,9 @@ void PizzaRepController::remove_element_from_menu()
     }
     fout.close();
     */
+}
+
+void validPizzaInput(){
+    try{
+    }
 }
