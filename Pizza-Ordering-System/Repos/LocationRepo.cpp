@@ -44,5 +44,21 @@ void LocationRepo::DisplayAllLocations(){
 
 }
 
-void LocationRepo::selectLocation(){
+string LocationRepo::selectLocation(){
+    string str, bb;
+    cout << "Please enter a location" << endl;
+    cin >> bb;
+    ///todo: check if location is valid
+    ifstream fin;
+    fin.open("Location.txt");
+    if(fin.is_open()){
+        while(!fin.eof()){
+            getline(fin, str);
+            if(bb == str){
+                cout << str << endl;
+            }
+        }
+        fin.close();
+    }
+    return str;
 }

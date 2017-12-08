@@ -12,7 +12,7 @@ class LocationRepo
         virtual ~LocationRepo();
         void AddLocation();
         void DisplayAllLocations();
-        void selectLocation();
+        string selectLocation();
 
     protected:
 
