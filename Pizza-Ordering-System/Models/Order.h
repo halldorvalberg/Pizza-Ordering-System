@@ -15,6 +15,8 @@ class Order
         Order();
         Order(int kt, vector<Pizza> val);
         virtual ~Order();
+        friend istream& operator >> (istream& in, Order& order);
+        friend ostream& operator << (ostream& out, Order& order);
 
     protected:
 

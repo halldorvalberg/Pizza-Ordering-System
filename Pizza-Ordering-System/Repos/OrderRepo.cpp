@@ -11,7 +11,8 @@ OrderRepo::~OrderRepo()
 }
 void OrderRepo::DisplayAllOrdersAtLocationBaker(){
     LocationRepo location;
-    location.selectLocation();
+    string str;
+    location.selectLocation(str);
     ifstream fin;
     fin.open("Pizza_order.dat");
     Pizza pizza;
@@ -21,17 +22,20 @@ void OrderRepo::DisplayAllOrdersAtLocationBaker(){
 }
 void OrderRepo::DisplayAllOrdersAtLocationSalesman(){
     LocationRepo location;
-    location.selectLocation();
+    string str;
+    location.selectLocation(str);
     ifstream fin;
     fin.open("Pizza_order.dat");
     Pizza pizza;
-    ///Some code to search in file for said match
+    ///Some code to search in file for said match, work in progress
     fin.close();
     cout << pizza << endl;
 }
 void OrderRepo::changeOrderBaker(){
     cout << "I do nothing yet, please replace me" << endl;
+    ///change the state of the order is ready, work in progress
 }
 void OrderRepo::changeOrderSalesman(){
     cout << "I do nothing yet, please replace me!" << endl;
+    ///change the state of the order being paid, work in progress
 }
