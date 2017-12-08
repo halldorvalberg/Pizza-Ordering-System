@@ -31,12 +31,24 @@ void LocationRepo::DisplayAllLocations(){
     fin.open("Locations.txt");
     if(fin.is_open()){
         while(!fin.eof()){
-//            str.getline(fin, str);
+          getline(fin, str);
             cout << location << endl;
         }
     fin.close();
     }
 }
 
-void LocationRepo::selectLocation(){
+void LocationRepo::selectLocation(string bb){
+    string str;
+    ifstream fin;
+    fin.open("Location.txt");
+    if(fin.is_open()){
+        while(!fin.eof()){
+            getline(fin, str);
+            if(bb == str){
+                cout << str << endl;
+            }
+        }
+        fin.close();
+    }
 }
