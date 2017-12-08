@@ -33,6 +33,7 @@
 					<Add directory="Tools" />
 					<Add directory="Repos" />
 					<Add directory="Models" />
+					<Add directory="Exceptions" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -58,6 +59,8 @@
 		<Unit filename="Controller/SalesmanMenuController.h" />
 		<Unit filename="Controller/ToppingRepController.cpp" />
 		<Unit filename="Controller/ToppingRepController.h" />
+		<Unit filename="Exceptions/LocationException.cpp" />
+		<Unit filename="Exceptions/LocationException.h" />
 		<Unit filename="Exceptions/PizzaNameError.cpp" />
 		<Unit filename="Exceptions/PizzaNameError.h" />
 		<Unit filename="Exceptions/PizzaPriceError.cpp" />

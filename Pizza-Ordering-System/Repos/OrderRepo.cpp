@@ -14,7 +14,7 @@ void OrderRepo::DisplayAllOrdersAtLocationBaker(){
     string str;
     location.selectLocation(str);
     ifstream fin;
-    fin.open("Pizza_order.dat");
+    fin.open("Pizza_order.dat", ios::binary);
     Pizza pizza;
     ///Some code to search in file for said match
     fin.close();
@@ -25,7 +25,7 @@ void OrderRepo::DisplayAllOrdersAtLocationSalesman(){
     string str;
     location.selectLocation(str);
     ifstream fin;
-    fin.open("Pizza_order.dat");
+    fin.open("Pizza_order.dat", ios::binary);
     Pizza pizza;
     ///Some code to search in file for said match, work in progress
     fin.close();
@@ -33,9 +33,11 @@ void OrderRepo::DisplayAllOrdersAtLocationSalesman(){
 }
 void OrderRepo::changeOrderBaker(){
     cout << "I do nothing yet, please replace me" << endl;
-    ///change the state of the order is ready, work in progress
+    ///change the state of the order is ready
+    ///work in progress
 }
 void OrderRepo::changeOrderSalesman(){
     cout << "I do nothing yet, please replace me!" << endl;
-    ///change the state of the order being paid, work in progress
+    ///change the state of the order being paid
+    ///work in progress
 }
