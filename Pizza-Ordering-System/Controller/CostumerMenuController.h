@@ -3,6 +3,9 @@
 
 #include "MainMenuController.h"
 
+
+
+
 class CostumerMenuController
 {
     public:
@@ -11,6 +14,9 @@ class CostumerMenuController
         void customOrder();
         void OrderFromMenu();
         void add_to_order(int e);
+        void get_id();
+
+        int kennitala;
 
     protected:
 

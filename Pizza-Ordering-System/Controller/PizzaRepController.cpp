@@ -56,7 +56,6 @@ void PizzaRepController::init()
 
 void PizzaRepController::add_to_menu()
 {
-    int nr;
     string name, price, size;
     vector<string> toppings;
 
@@ -82,48 +81,9 @@ void PizzaRepController::add_to_menu()
 
 void PizzaRepController::remove_element_from_menu()
 {
-    //Bilað
-    outputstring("Bilað");
-    /*
-    display_menu();
-    int counter;
-    int nr;
-    string str;
+    vector<Pizza> menu;
 
-    vector<string> temp;
-    ///Dump content of file to vector
     ifstream fin;
-    fin.open("Pizza_Menu_Binary.txt");
-    if(fin.is_open()) {
-        while(!fin.eof()) {
-            getline(fin, str);
-            temp.push_back(str);
-            counter++;
-        }
-        fin.close();
-    }
-    else {
-        cout << "Unable to read from file!" << endl;
-    }
 
-    ///Select element to remove
-    outputstring("Select 0 to return: \nSelect element to remove: ");
-    cin >> nr;
-    if(nr == 0){
-        PizzaRepController prc;
-    }
-
-    ///Selected element removed
-    temp.erase(temp.begin()+nr-1);
-
-
-    ///Refill file without selected element
-    counter = temp.size();
-    ofstream fout;
-    fout.open("Pizza_Menu_Binary.txt", ios::out|ios::trunc);
-    for(int i = 0; i < counter; i++){
-        fout << temp[i] << endl;
-    }
-    fout.close();
-    */
+    ///WIP
 }

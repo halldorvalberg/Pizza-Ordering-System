@@ -5,6 +5,7 @@ MainMenuController::MainMenuController()
     clearScreen();
     dispHeader();
     clear_order("Costumer_Order_Binary.dat");
+    onLoad();
     init();
 }
 
@@ -42,6 +43,38 @@ void MainMenuController::init()
     else if( inputString == "q"){
         exitApplication();
     }
+
+}
+
+void MainMenuController::onLoad()
+{
+
+    ofstream fout;
+    fout.open("Orders_Binary.dat", ios::binary);
+    fout.close();
+
+
+    ifstream fin;
+
+    fin.open("Orders_Binary.dat", ios::binary);
+
+    fin.seekg(0, fin.end);
+    int records = fin.tellg() / sizeof(Order);
+    fin.seekg(0, fin.beg);
+
+    Order *data = new Order[records];
+
+    fin.read((char*)data, sizeof(Order) * records);
+
+    fin.close();
+
+    for (int i = 0; i < records; i++) {
+        OrderVector.push_back(data[i]);
+    }
+
+
+
+
 
 }
 

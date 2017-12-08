@@ -5,6 +5,7 @@
 #include<iostream>
 #include<fstream>
 #include<vector>
+#include<ctime>
 
 #include "GlobalTools.h"
 #include "MainMenuView.h"
@@ -24,11 +25,12 @@
 #include "PizzaRepController.h"
 #include "Pizza.h"
 #include "Toppings.h"
+#include "Order.h"
 #include "ToppingNameError.h"
 #include "ToppingPriceError.h"
-#include "Toppings.h"
 #include "OrderRepo.h"
 #include "Locations.h"
+
 
 using namespace std;
 using namespace ToppingRepMenuView;
@@ -48,9 +50,12 @@ class MainMenuController
         MainMenuController();
         virtual ~MainMenuController();
         void init();
-    protected:
+        void onLoad();
 
-    private:
+
+        vector<Order> OrderVector;
+        vector<Pizza> PizzaVector;
+        vector<Toppings> ToppingsVector;
 };
 
 #endif // MAINMENUCONTROLLER_H

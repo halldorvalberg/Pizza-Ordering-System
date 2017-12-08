@@ -17,6 +17,8 @@
 					<Add directory="View" />
 					<Add directory="Tools" />
 					<Add directory="Repos" />
+					<Add directory="Exceptions" />
+					<Add directory="Models" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -30,6 +32,7 @@
 					<Add directory="View" />
 					<Add directory="Tools" />
 					<Add directory="Repos" />
+					<Add directory="Models" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -65,6 +68,8 @@
 		<Unit filename="Exceptions/ToppingPriceError.h" />
 		<Unit filename="Models/Locations.cpp" />
 		<Unit filename="Models/Locations.h" />
+		<Unit filename="Models/Order.cpp" />
+		<Unit filename="Models/Order.h" />
 		<Unit filename="Models/Pizza.cpp" />
 		<Unit filename="Models/Pizza.h" />
 		<Unit filename="Models/Toppings.cpp" />

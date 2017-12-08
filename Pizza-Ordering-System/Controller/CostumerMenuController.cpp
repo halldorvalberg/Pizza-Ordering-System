@@ -1,9 +1,14 @@
 #include "CostumerMenuController.h"
 
+#include<string>
+#include<iostream>
+using namespace std;
+
 CostumerMenuController::CostumerMenuController()
 {
     clearScreen();
     dispHeader();
+    get_id();
     init();
 }
 
@@ -105,6 +110,19 @@ void CostumerMenuController::add_to_order(int e)
         outputstring("Fatal ERROR");
     }
 
+}
 
+
+void CostumerMenuController::get_id()
+{
+    outputstring("Enter your social number: ");
+
+    int a;
+
+    cin >> a;
+
+    if(std::to_string(a).length() == 10){
+        kennitala = a;
+    }
 
 }

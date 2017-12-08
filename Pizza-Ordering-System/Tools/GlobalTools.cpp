@@ -44,7 +44,7 @@ void GlobalTools::add_all_to_file(string data, string location)
     }
 
     fout.close();
-
-
-
 }
+
+
+

@@ -6,6 +6,8 @@
 #include<string>
 #include<vector>
 
+#include "Toppings.h"
+
 using namespace std;
 
 class Pizza
@@ -13,22 +15,16 @@ class Pizza
     public:
         Pizza();
         virtual ~Pizza();
-
-
-       // int getpizzasize();
-       // int getpizzaprice();
-       // void addtopping();
-
+        Pizza(int price, int sz, char name[50], vector<Toppings> tv);
         friend ifstream& operator >> (ifstream& in, Pizza& pizza);
         friend ofstream& operator << (ofstream& out, Pizza& pizza);
         friend ostream& operator << (ostream& out, Pizza& pizza);
         friend istream& operator >> (istream& in, Pizza& pizza);
 
-    private:
-        int nr;
+        int price;
+        int sz;
         char name[50];
-        char price[10];
-        char size[10];
+        vector<Toppings> toppingsVector;
         //vector<string> toppings;
 };
 
