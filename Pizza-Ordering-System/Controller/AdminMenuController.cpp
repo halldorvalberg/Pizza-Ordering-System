@@ -32,8 +32,7 @@ void AdminMenuController::init()
         PizzaRepController prc;
     }
     else if( admininput == "2"){
-        outputstring("I do nothing yet");
-        AdminMenuController amc;
+        ToppingRepController trc;
     }
     else if( admininput == "3"){
         outputstring("I do nothing yet");

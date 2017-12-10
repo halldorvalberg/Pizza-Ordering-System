@@ -15,8 +15,8 @@ class Toppings
         string gettoppingname();
         int gettoppingprice();
 
-        friend ifstream& operator >> (ifstream& in, Toppings& topping);
-        friend ofstream& operator >> (ofstream& out, Toppings& topping);
+        friend istream& operator >> (istream& in, Toppings& topping);
+        friend ofstream& operator << (ofstream& out, Toppings& topping);
 
     protected:
 

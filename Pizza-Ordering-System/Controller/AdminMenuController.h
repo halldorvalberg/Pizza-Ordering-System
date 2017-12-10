@@ -1,6 +1,7 @@
 #ifndef ADMINMENUCONTROLLER_H
 #define ADMINMENUCONTROLLER_H
 
+#include "ToppingRepController.h"
 #include "MainMenuController.h"
 
 class AdminMenuController

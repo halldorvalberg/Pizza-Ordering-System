@@ -1,6 +1,7 @@
 #ifndef TOPPINGREPCONTROLLER_H
 #define TOPPINGREPCONTROLLER_H
 
+#include "Toppings.h"
 #include "MainMenuController.h"
 #include <iostream>
 using namespace std;

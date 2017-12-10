@@ -2,7 +2,9 @@
 
 ToppingRepController::ToppingRepController()
 {
-    //ctor
+    clearScreen();
+    dispHeader();
+    init();
 }
 
 ToppingRepController::~ToppingRepController()
@@ -11,18 +13,17 @@ ToppingRepController::~ToppingRepController()
 }
 
 void ToppingRepController::add_topping_to_menu(){
-    string str;
-    int i;
-    cin >> str >> i;
-    Toppings topping(str, i);
-    AreToppingsValid(topping); ///check if error is in the input
+    Toppings topping;
+    cout << "Add topping to menu";
+    cin >> topping;
+ //   AreToppingsValid(topping); ///check if error is in the input
     ///write the content of this into a file
     ofstream fout;
 
     fout.open("Toppings_Menu_Binary.dat", ios::app|ios::binary);
 
     if(fout.is_open()){
-        fout << str << "\t" << i << endl;
+        fout.write((char*)(&topping), sizeof(Toppings));
         fout.close();
     }
     else{
@@ -99,17 +100,27 @@ void ToppingRepController::AreToppingsValid(Toppings& topping){
 }
 
 void ToppingRepController::displayToppings(){
+    ///bilað
+    /*
+    cout << "Topping menu";
     Toppings topping;
     ifstream fin;
+
     fin.open("Toppings_Menu_Binary.dat", ios::binary);
+    if(fin.is_open()){
 
-    fin.seekg(0, fin.end);
-    int records = fin.tellg() / sizeof(Toppings);
-    fin.seekg(0, fin.beg);
+        fin.seekg(0, fin.end);
+        int records = fin.tellg() / sizeof(Toppings);
+        fin.seekg(0, fin.beg);
 
-    for(int i = 0; i < records; i++){
-        fin.read((char*)(&topping), sizeof(Toppings));
-//        cout << "Topping nr " << i+1 << ": " << topping << endl;
+        for(int i = 0; i < records; i++){
+            fin.read((char*)(&topping), sizeof(Toppings));
+   //         cout << "Topping nr " << i+1 << ": " << topping << endl;
+        }
+        fin.close();
     }
-    fin.close();
+    else{
+        cout << "File is not open" << endl;
+    }
+    */
 }

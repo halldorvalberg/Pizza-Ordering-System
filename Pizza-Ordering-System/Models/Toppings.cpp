@@ -18,12 +18,16 @@ int Toppings::gettoppingprice(){
     return this->price;
 }
 
-ifstream& operator >> (ifstream& in, Toppings& topping){
-    in >> topping.name >> topping.price;
+istream& operator >> (istream& in, Toppings& topping){
+    cout << "Name: ";
+    in >> topping.name;
+    cout << "Price: ";
+    in >> topping.price;
     return in;
 }
 
-ofstream& operator >> (ofstream& out, Toppings& topping){
-    out << topping.name << " " << topping.price << endl;
+ofstream& operator << (ofstream& out, Toppings& topping){
+    out << topping.name << " ";
+    out << topping.price << "kr" << endl;
     return out;
 }
