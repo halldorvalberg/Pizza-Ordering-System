@@ -2,7 +2,9 @@
 
 ToppingRepController::ToppingRepController()
 {
-    //ctor
+    clearScreen();
+    dispHeader();
+    init();
 }
 
 ToppingRepController::~ToppingRepController()
@@ -11,22 +13,18 @@ ToppingRepController::~ToppingRepController()
 }
 
 void ToppingRepController::add_topping_to_menu(){
-    string str;
-    int i;
-    cin >> str >> i;
-    Toppings topping(str, i);
-    AreToppingsValid();
     ///write the content of this into a file
+    string name, price;
+    Toppings topping;
+    cin >> topping;
+    cout << "Your toppings: " << topping;
     ofstream fout;
     fout.open("Toppings_Menu_Binary.dat", ios::app|ios::binary);
 
-    if(fout.is_open()){
-    fout << str << "\t" << i << endl;
+    fout.write((char*)(&topping), sizeof(Toppings));
     fout.close();
-    }
-    else{
-        cout << "File could not be opened!" << endl;
-    }
+    outputstring("Your topping has been added to menu");
+
 }
 void ToppingRepController::remove_topping_from_menu(){
     ///Remove a certain topping from menu, work in progress!!
@@ -47,6 +45,7 @@ void ToppingRepController::init(){
 
     if(input[0] == '1'){
         ///View Toppings Menu
+        clearScreen();
         displayToppings();
         outputstring("");
         outputstring("Enter any key to exit");
@@ -56,6 +55,8 @@ void ToppingRepController::init(){
     else if (input[0] == '2'){
         ///Add item to toppings menu
         add_topping_to_menu();
+        outputstring("Enter any key to continue");
+        cin >> input;
         ToppingRepController trc;
     }
     else if (input[0] == '3'){
@@ -70,30 +71,39 @@ void ToppingRepController::init(){
 }
 
 void ToppingRepController::AreToppingsValid(){
-  /*  try{
-        Toppings topping;
+    Toppings topping;
+ /*   try{
         cin >> topping;
-    if(topping.gettoppingprice() < 0){
+        if(topping.gettoppingprice() < 0){
         throw ToppingPriceError("Invalid topping price!");
-    }
+        }
 
-    string str = topping.gettoppingname();
+        string str = topping.gettoppingname();
         for(unsigned int i = 0; i < str.length(); i++){
-        if(!str[i].charAt(b)){
+        if(!islower(str[i])&& !isupper(str[i])){
             throw ToppingNameError("Invalid topping name!");
             }
         }
     }
-    catch(ToppingNameError n){
-        cout << n.getmessage() << endl;
-    }
+  //  catch(ToppingNameError n){
+    //    cout << n.getmessage() << endl;
+     //   return;
+    //}
     catch(ToppingPriceError p){
         cout << p.getmessage() << endl;
-    }*/
+        return;
+    }
+    add_topping_to_menu();
+    */
 }
 
 void ToppingRepController::displayToppings(){
+
     Toppings topping;
+    clearScreen();
+    dispHeader();
+    cout << "Topping menu: " << endl;
+
     ifstream fin;
     fin.open("Toppings_Menu_Binary.dat", ios::binary);
 
@@ -103,7 +113,7 @@ void ToppingRepController::displayToppings(){
 
     for(int i = 0; i < records; i++){
         fin.read((char*)(&topping), sizeof(Toppings));
-//        cout << "Topping nr " << i+1 << ": " << topping << endl;
+        cout << "topping nr " << i+1 << ": "<< topping << endl;
     }
     fin.close();
 }

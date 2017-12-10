@@ -23,6 +23,7 @@
 #include "CostumerMenuController.h"
 #include "SalesmanMenuController.h"
 #include "PizzaRepController.h"
+#include "ToppingRepController.h"
 #include "Pizza.h"
 #include "Toppings.h"
 #include "Order.h"

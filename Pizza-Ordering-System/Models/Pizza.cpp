@@ -23,22 +23,6 @@ Pizza::~Pizza()
 }
 
 
-/*
-void Pizza::addtopping(){
-//    toppings.push_back();
-}
-string Pizza::getpizzaname(){
-    return this->name;
-}
-
-int Pizza::getpizzasize(){
-    return this->size;
-}
-
-int Pizza::getpizzaprice(){
-    return this->price;
-}
-*/
 ifstream& operator >> (ifstream& in, Pizza& pizza){
     in >> pizza.name >> pizza.sz >> pizza.price;
     return in;

@@ -10,18 +10,20 @@ class Toppings
 {
     public:
         Toppings();
-        Toppings(string name, int price);
+        Toppings(char name[20], int price);
 
-        string gettoppingname();
-        int gettoppingprice();
+       // char gettoppingname();
+       // int gettoppingprice();
 
+        friend istream& operator >> (istream& in, Toppings& topping);
+        friend ostream& operator << (ostream& out, Toppings& topping);
         friend ifstream& operator >> (ifstream& in, Toppings& topping);
-        friend ofstream& operator >> (ofstream& out, Toppings& topping);
+        friend ofstream& operator << (ofstream& out, Toppings& topping);
 
     protected:
 
     private:
-        string name;
+        char name[20];
         int price;
 };
 
