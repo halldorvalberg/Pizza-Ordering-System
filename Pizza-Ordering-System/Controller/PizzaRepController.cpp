@@ -81,9 +81,45 @@ void PizzaRepController::add_to_menu()
 
 void PizzaRepController::remove_element_from_menu()
 {
-    vector<Pizza> menu;
+    clearScreen();
+    dispHeader();
+    display_menu();
+
+    outputstring("Input number of element to remove: ");
+
+    char element;
+    int toremove;
+
+    cin >> element;
+
+    if(element == 'q') {
+        PizzaRepController prc;
+    }
+    else if (48 < element && element < 58) {
+        toremove = element - 48;
+    }
 
     ifstream fin;
+    fin.open("Pizza_Menu_Binary.dat", ios::binary);
+    fin.seekg(0, fin.end);
+    int rec = fin.tellg() / sizeof(Pizza);
+    fin.seekg(0, fin.beg);
+    Pizza *data = new Pizza[rec];
+    fin.read((char*)data, sizeof(Pizza)*rec);
+    fin.close();
 
-    ///WIP
+    ofstream fout;
+    fout.open("Pizza_Menu_Binary.dat", ios::binary);
+
+    for(int i = 0; i < rec-1; i++) {
+        if(i != toremove){
+            fout.write((char*)(&data[i]), sizeof(Pizza));
+        }
+    }
+    fout.close();
+
+
+    delete [] data;
+
 }
+

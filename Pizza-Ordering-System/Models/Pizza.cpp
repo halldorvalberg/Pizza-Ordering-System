@@ -14,7 +14,7 @@ Pizza::Pizza(int price, int sz, char name[50], vector<Toppings> tv)
         this->name[i] = name[i];
     }
 
-    this->toppingsVector.swap(tv);
+    //this->toppingsVector.swap(tv);
 }
 
 Pizza::~Pizza()

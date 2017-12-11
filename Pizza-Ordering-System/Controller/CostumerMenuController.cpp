@@ -121,8 +121,8 @@ void CostumerMenuController::get_id()
 
     cin >> a;
 
-    if(std::to_string(a).length() == 10){
-        kennitala = a;
-    }
+//    if(std::to_string(a).length() == 10){
+  //      kennitala = a;
+   // }
 
 }
