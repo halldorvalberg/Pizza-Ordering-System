@@ -74,7 +74,7 @@ void PizzaRepController::add_to_menu()
 
     fout.close();
 
-    outputstring("Your Pizza has been added to the menu\n");
+    outputstring("\n\nYour Pizza has been added to the menu\n");
 
 
 }
@@ -96,7 +96,7 @@ void PizzaRepController::remove_element_from_menu()
         PizzaRepController prc;
     }
     else if (48 < element && element < 58) {
-        toremove = element - 48;
+        toremove = element - 49;
     }
 
     ifstream fin;
