@@ -110,34 +110,36 @@ void ToppingRepController::init(){
 
 void ToppingRepController::AreToppingsValid(Toppings& topping) throw (ToppingNameError, ToppingPriceError){
 
-    //char name[20];
+    char name[20];
     int price = 0;
 
     try{
         ///name input error isn't working like it should do
         cin >> topping;
-      //  name[20] = topping.gettoppingname();
+        name[20] = topping.gettoppingname();
         price = topping.gettoppingprice();
-/*
-        for(unsigned int i = 0; i < sizeof(name) ; i++){
-            if(name[i] == '\0'){
-                break;
-            }
-            else if(!isalpha(name[i])){
+
+        for(unsigned int i = 0; i < 20 ; i++){
+            ///value for A-Z and A-Z in ascii table
+            if(name[i] < 65 && name[i] > 123){
                 throw ToppingNameError ("Not valid name");
             }
-        }*/
+            ///the input between 91 and 96 in Ascii table except for \ which wasnt working
+            else if(name[i] == '[' && name[i] == ']' && name[i] == '^' && name[i] == '`'){
+                throw ToppingNameError ("Not valid name");
+            }
+        }
         if(price < 0){
             throw ToppingPriceError ("Not valid topping");
         }
     }
-/*
+
     catch(ToppingNameError e){
-        cout << "Invalid topping name" << endl;
+        cout << e.getmessage() << endl;
     }
-*/
+
     catch(ToppingPriceError e){
-        cout << "Invalid topping price" << endl;
+        cout <<  e.getmessage() << endl;
 
     }
 

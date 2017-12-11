@@ -121,3 +121,33 @@ void PizzaRepController::remove_element_from_menu()
 
 }
 
+void isPizzainputValid(){
+    Pizza pizza;
+    try{
+        cin >> pizza;
+        if (pizza.price < 0){
+            throw PizzaPriceError("Not valid price");
+        }
+        if(pizza.sz < 0){
+            cout << "Invalid pizza size" << endl;
+        }
+
+        for(unsigned int i = 0; i < 50 ; i++){
+            ///value for A-Z and A-Z in ascii table
+            if(pizza.name[i] < 65 && pizza.name[i] > 123){
+                throw PizzaNameError ("Not valid name");
+            }
+            ///the input between 91 and 96 in Ascii table except for \ which wasnt working
+            else if(pizza.name[i] == '[' && pizza.name[i] == ']' && pizza.name[i] == '^' && pizza.name[i] == '`'){
+                throw PizzaNameError("Not valid name");
+            }
+        }
+
+    }
+    catch(PizzaPriceError p){
+        cout << p.getmessage() << endl;
+    }
+    catch(PizzaNameError n){
+        cout << n.getmessage() << endl;
+    }
+}

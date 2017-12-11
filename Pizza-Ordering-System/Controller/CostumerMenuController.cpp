@@ -135,6 +135,7 @@ void CostumerMenuController::add_to_order(int e, Order &order)
 }
 
 void CostumerMenuController::customOrder(Order &order){
+    ///WIP
     clearScreen();
     dispHeader();
     displayToppings();
@@ -157,6 +158,7 @@ void CostumerMenuController::customOrder(Order &order){
     }
 }
 void CostumerMenuController::InputForEachPizza(int amount, int menu){
+    ///WIP
     Pizza pizza;
     Order order;
     int counter = 1;
@@ -184,6 +186,7 @@ void CostumerMenuController::add_order_to_file(Order neworder)
 }
 
 void CostumerMenuController::addToppingsToOrder(int e, Pizza &order){
+    ///WIP
     Toppings topping;
     Order orderr;
     ifstream fin;

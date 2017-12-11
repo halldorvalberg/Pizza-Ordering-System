@@ -2,6 +2,8 @@
 #define PIZZAREPCONTROLLER_H
 
 #include "MainMenuController.h"
+#include "PizzaNameError.h"
+#include "PizzaPriceError.h"
 
 class PizzaRepController
 {
