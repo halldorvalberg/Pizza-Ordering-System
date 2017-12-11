@@ -143,24 +143,3 @@ void ToppingRepController::AreToppingsValid(Toppings& topping) throw (ToppingNam
 
     add_topping_to_menu(topping);
 }
-
-void ToppingRepController::displayToppings(){
-
-    Toppings topping;
-    clearScreen();
-    dispHeader();
-    cout << "Topping menu: " << endl;
-
-    ifstream fin;
-    fin.open("Toppings_Menu_Binary.dat", ios::binary);
-
-    fin.seekg(0, fin.end);
-    int records = fin.tellg() / sizeof(Toppings);
-    fin.seekg(0, fin.beg);
-
-    for(int i = 0; i < records; i++){
-        fin.read((char*)(&topping), sizeof(Toppings));
-        cout << "topping nr " << i+1 << ": "<< topping << endl;
-    }
-    fin.close();
-}

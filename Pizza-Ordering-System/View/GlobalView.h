@@ -19,6 +19,7 @@ namespace GlobalView
    void display_menu();
    void view_order(Order order, int rec);
    void BakerOrderView();
+   void displayToppings();
 };
 
 #endif // GLOBALVIEW_H

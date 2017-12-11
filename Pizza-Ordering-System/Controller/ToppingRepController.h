@@ -5,7 +5,7 @@
 #include "ToppingNameError.h"
 #include "ToppingPriceError.h"
 #include <iostream>
-#include <algorithm>
+
 using namespace std;
 
 
@@ -17,7 +17,7 @@ class ToppingRepController
         void add_topping_to_menu(Toppings& topping);
         void remove_topping_from_menu();
         void AreToppingsValid(Toppings& topping) throw (ToppingNameError, ToppingPriceError);
-        void displayToppings();
+        //void displayToppings();
 
     protected:
 

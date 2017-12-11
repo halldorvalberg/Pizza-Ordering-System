@@ -24,6 +24,7 @@ void CostumerMenuController::init(){
     char input;
     pizzas_ordered = 0;
     total_price = 0;
+    toppings_ordered = 0;
     bool orderinprosess = true;
 
 
@@ -43,7 +44,7 @@ void CostumerMenuController::init(){
             OrderFromMenu(neworder);
         }
         else if(input == '2'){
-            outputstring("I do nothing yet");
+            customOrder(neworder);
         }
         else if(input == '3'){
 
@@ -133,6 +134,43 @@ void CostumerMenuController::add_to_order(int e, Order &order)
 
 }
 
+void CostumerMenuController::customOrder(Order &order){
+    clearScreen();
+    dispHeader();
+    displayToppings();
+
+    int amount;
+    outputstring("How many toppings do you want on your pizza? ");
+    cin >> amount;
+    outputstring("\nSelect Toppings to add to order or 0 (zero) to return:");
+    int menu;
+    do{
+    cin >> menu;
+    }while(menu < 0);
+
+    if(menu == 0){
+        CostumerMenuController cmc;
+    }
+    else{
+       InputForEachPizza(amount, menu);
+
+    }
+}
+void CostumerMenuController::InputForEachPizza(int amount, int menu){
+    Pizza pizza;
+    Order order;
+    int counter = 1;
+    double basepizza = 1500; ///Price of basic pizza with nothing on it
+    int size = 0;
+    while(counter < amount){
+    addToppingsToOrder(menu, pizza);
+    }
+    cout << "choose a size for your pizza";
+    cin >> size;
+    total_price = pizza.price + basepizza;
+
+}
+
 void CostumerMenuController::add_order_to_file(Order neworder)
 {
     ofstream fout;
@@ -145,3 +183,26 @@ void CostumerMenuController::add_order_to_file(Order neworder)
 
 }
 
+void CostumerMenuController::addToppingsToOrder(int e, Pizza &order){
+    Toppings topping;
+    Order orderr;
+    ifstream fin;
+
+    fin.open("Toppings_Menu_Binary.dat", ios::binary);
+
+    fin.seekg(0, fin.end);
+    int records = fin.tellg() / sizeof(Toppings);
+    fin.seekg(0, fin.beg);
+
+    if(records >= e) {
+
+    for(int i = 0; i < e; i++){
+        fin.read((char*)(&topping), sizeof(Toppings));
+    }
+    fin.close();
+    }
+    orderr.ordered[pizzas_ordered] = order;
+    pizzas_ordered++;
+    total_price += order.price;
+
+}

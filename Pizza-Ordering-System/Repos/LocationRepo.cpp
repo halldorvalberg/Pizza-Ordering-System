@@ -14,7 +14,7 @@ LocationRepo::~LocationRepo()
 void LocationRepo::validLocation(string str){
     try{
         for(unsigned int i = 0; i < str.size(); i++){
-        if (!islower(str[i]) && !isupper(str[i])){
+        if (!isalpha(str[i])){
             throw LocationException("Invalid location");
         }
         }
@@ -29,7 +29,7 @@ void LocationRepo::AddLocation(){
     string str;
     Locations location(str);
     cin >> str;
-    validLocation(str);
+    //validLocation(str);
     ofstream fout;
 
     fout.open("Locations.txt", ios::app);
