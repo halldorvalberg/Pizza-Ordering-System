@@ -66,6 +66,7 @@ void CostumerMenuController::init(){
             view_order(neworder, pizzas_ordered);
 
             neworder.price = total_price;
+            neworder.number_of_pizzas = pizzas_ordered;
 
             outputstring("Total price: ");
             cout << neworder.price;

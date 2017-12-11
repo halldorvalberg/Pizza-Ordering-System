@@ -61,3 +61,28 @@ void GlobalView::view_order(Order order, int rec)
     delete [] pizzas;
 
 }
+
+void GlobalView::BakerOrderView()
+{
+    ifstream fin;
+
+    fin.open("Ordered_Pizzas_Binary.dat", ios::binary);
+
+    fin.seekg(0, fin.end);
+    int rec = fin.tellg() / sizeof (Order);
+    fin.seekg(0, fin.beg);
+
+    Order *data = new Order[rec];
+    fin.read((char*)data, sizeof(Order) * rec);
+
+    fin.close();
+    int j = 1;
+    for(int i = 0; i < rec; i++) {
+        if(!data[i].state) {
+            cout << "Order nr: " << j << endl;
+            cout << data[i] << endl;
+            j++;
+        }
+    }
+    delete[] data;
+}

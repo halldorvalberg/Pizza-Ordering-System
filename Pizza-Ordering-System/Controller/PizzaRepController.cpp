@@ -111,13 +111,12 @@ void PizzaRepController::remove_element_from_menu()
     ofstream fout;
     fout.open("Pizza_Menu_Binary.dat", ios::binary);
 
-    for(int i = 0; i < rec-1; i++) {
+    for(int i = 0; i < rec; i++) {
         if(i != toremove){
             fout.write((char*)(&data[i]), sizeof(Pizza));
         }
     }
     fout.close();
-
 
     delete [] data;
 

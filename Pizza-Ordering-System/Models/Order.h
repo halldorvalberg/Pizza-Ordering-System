@@ -24,15 +24,14 @@ class Order
 
         bool state;
         bool payed;
-        //int id;
         int price;
-        //time_t date_of;
-        //time_t date_by;
-
         char name[40];
         int phone_number;
+        int number_of_pizzas;
         Pizza ordered[20];
-
+        //int id;
+        //time_t date_of;
+        //time_t date_by;
       //  vector <Pizza> ordervector;
 };
 

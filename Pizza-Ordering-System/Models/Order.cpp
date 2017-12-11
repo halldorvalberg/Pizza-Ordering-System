@@ -43,8 +43,20 @@ istream& operator >> (istream& in, Order& order){
     return in;
 }
 ostream& operator << (ostream& out, Order& order){
+    string str(order.name);
+
+    out << "Order placed by: " << str << endl;
+    out << "\tNumber: " << order.phone_number << endl;
+    for (int i = 0; i < order.number_of_pizzas; i++) {
+        out << order.ordered[i] << endl;
+    }
+
+
     out << order.state;
     out << order.payed;
+
+
+
 //    out << order.id;
 //    out << order.date_of;
 //    out << order.date_by;
