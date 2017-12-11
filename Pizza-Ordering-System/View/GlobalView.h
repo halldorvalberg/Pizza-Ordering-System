@@ -7,6 +7,7 @@
 #include "Pizza.h"
 #include "DisplayString.h"
 #include "GlobalTools.h"
+#include "Order.h"
 
 using namespace GlobalTools;
 using namespace DisplayString;
@@ -16,7 +17,7 @@ namespace GlobalView
 {
    void dispHeader();
    void display_menu();
-   void view_order();
+   void view_order(Order order, int rec);
 };
 
 #endif // GLOBALVIEW_H

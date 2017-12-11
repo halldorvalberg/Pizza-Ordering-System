@@ -39,27 +39,25 @@ void GlobalView::display_menu()
 
 }
 
-void GlobalView::view_order()
+void GlobalView::view_order(Order order, int rec)
 {
+
+    cout << rec << endl;
+
+    Pizza *pizzas = new Pizza[rec];
+
+    for(int i = 0; i < rec; i++) {
+        pizzas[i] = order.ordered[i];
+    }
+
     clearScreen();
     dispHeader();
 
     outputstring("Your Order: ");
 
-    Pizza pizza;
-
-    ifstream fin;
-
-    fin.open("Costumer_Order_Binary.dat", ios::binary);
-
-    fin.seekg(0, fin.end);
-    int records = fin.tellg() / sizeof(Pizza);
-    fin.seekg(0, fin.beg);
-
-    for(int i = 0; i < records; i++){
-        fin.read((char*)(&pizza), sizeof(Pizza));
-        cout << "Pizza nr " << i+1 << ": " << pizza << endl;
-
+    for(int i = 0; i < rec; i++) {
+        cout << pizzas[i] << endl;
     }
-    fin.close();
+    delete [] pizzas;
+
 }

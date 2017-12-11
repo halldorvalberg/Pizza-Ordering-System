@@ -2,10 +2,12 @@
 
 Order::Order()
 {
-
+    state = false;
+    payed = false;
+    price = 0;
 }
 
-Order::Order(int kt, vector<Pizza> val)
+/*Order::Order(int kt, vector<Pizza> val)
 {
     this->state = false;
     this->payed = false;
@@ -19,24 +21,32 @@ Order::Order(int kt, vector<Pizza> val)
     this->ordervector.swap(val);
 
 }
+*/
 
 Order::~Order()
 {
     //dtor
 }
+
 istream& operator >> (istream& in, Order& order){
-    in >> order.state;
-    in >> order.payed;
-    in >> order.id;
-    in >> order.date_of;
-    in >> order.date_by;
+    cout << "Enter your name: ";
+    in >> ws;
+    in.getline(order.name, 40);
+    cout << "Enter your phone number: ";
+    in >> order.phone_number;
+
+//    in >> order.state;
+//    in >> order.payed;
+//    in >> order.id;
+//    in >> order.date_of;
+//    in >> order.date_by;
     return in;
 }
 ostream& operator << (ostream& out, Order& order){
     out << order.state;
     out << order.payed;
-    out << order.id;
-    out << order.date_of;
-    out << order.date_by;
+//    out << order.id;
+//    out << order.date_of;
+//    out << order.date_by;
     return out;
 }

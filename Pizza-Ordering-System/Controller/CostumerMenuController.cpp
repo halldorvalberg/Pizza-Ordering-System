@@ -8,7 +8,6 @@ CostumerMenuController::CostumerMenuController()
 {
     clearScreen();
     dispHeader();
-    get_id();
     init();
 }
 
@@ -16,42 +15,72 @@ CostumerMenuController::~CostumerMenuController()
 {
     //dtor
 }
+
 void CostumerMenuController::init(){
+    Order neworder;
+    cin >> neworder;
+
 
     char input;
+    pizzas_ordered = 0;
+    bool orderinprosess = true;
+
 
     do{
-        CostumerMenuDisplay();
-        cin >> input;
-    }while(input !='1'&& input !='2'&&
-           input !='q'&& input != 'Q');
+        clearScreen();
+        dispHeader();
+
+            do{
+                CostumerMenuDisplay();
+                cin >> input;
+            }while(input !='1'&& input !='2'&&
+                   input !='3'&& input !='q'&&
+                   input != 'Q');
+
+        if (input == '1'){
+            ///Order pizza from menu
+            OrderFromMenu(neworder);
+        }
+        else if(input == '2'){
+            outputstring("I do nothing yet");
+        }
+        else if(input == '3'){
+
+            ///View Order
+            view_order(neworder, pizzas_ordered);
+
+            outputstring("\nInput any key to exit: ");
+            char confirm;
+            cin >> confirm;
 
 
-    if (input == '1'){
-        ///Order pizza from menu
-        OrderFromMenu();
-        CostumerMenuController cmc;
-    }
-    else if(input == '2'){
-        ///View Order
-        view_order();
-        //global view
-        outputstring("Place order (y/n)");
-        char confirm;
-        cin >> confirm;
-        if(confirm == 'y' || confirm == 'Y') {
-            add_all_to_file("Costumer_Order_Binary.dat", "Ordered_Pizzas_Binary.dat");
+            if(confirm == 'y' || confirm == 'Y') {
+                add_all_to_file("Costumer_Order_Binary.dat", "Ordered_Pizzas_Binary.dat");
+            }
+            else{
+            }
         }
-        else{
-        CostumerMenuController cmc;
+        else if (input == 'q' || input == 'Q'){
+            char quit;
+            view_order(neworder, pizzas_ordered);
+
+            outputstring("Confirm Order? (y/n)");
+            cin >> quit;
+
+                if(quit == 'y') {
+
+                    add_order_to_file(neworder);
+
+                    outputstring("\nYour order has been placed. ");
+
+                    orderinprosess = false;
+                    break;
+                }
         }
-    }
-    else if (input == 'q' || input == 'Q'){
-        MainMenuController mmc;
-    }
+    }while(orderinprosess == true);
 }
 
-void CostumerMenuController::OrderFromMenu(){ ///WIP
+void CostumerMenuController::OrderFromMenu(Order &order){ ///WIP
     clearScreen();
     dispHeader();
     display_menu();
@@ -66,19 +95,11 @@ void CostumerMenuController::OrderFromMenu(){ ///WIP
         CostumerMenuController cmc;
     }
     else{
-        //ATH hvort innslag samvarist lista
-        add_to_order(menu);
+        add_to_order(menu, order);
     }
 }
 
-
-
-void CostumerMenuController::customOrder(){ ///work in progress
-    cout << "Custom order" << endl;
-    cout << "Please select toppings for your pizza: ";
-}
-
-void CostumerMenuController::add_to_order(int e)
+void CostumerMenuController::add_to_order(int e, Order &order)
 {
     Pizza pizza;
 
@@ -96,33 +117,21 @@ void CostumerMenuController::add_to_order(int e)
         fin.read((char*)(&pizza), sizeof(Pizza));
     }
     fin.close();
+    }
 
+    order.ordered[pizzas_ordered] = pizza;
+    pizzas_ordered++;
+}
+
+void CostumerMenuController::add_order_to_file(Order neworder)
+{
     ofstream fout;
 
-    fout.open("Costumer_Order_Binary.dat", ios::binary|ios::app);
+    fout.open("Ordered_Pizzas_Binary.dat", ios::binary|ios::app);
 
-    fout.write((char*)(&pizza), sizeof(Pizza));
+    fout.write((char*)(&neworder), sizeof(Order));
 
     fout.close();
 
-    }
-    else {
-        outputstring("Fatal ERROR");
-    }
-
 }
 
-
-void CostumerMenuController::get_id()
-{
-    outputstring("Enter your social number: ");
-
-    int a;
-
-    cin >> a;
-
-//    if(std::to_string(a).length() == 10){
-  //      kennitala = a;
-   // }
-
-}
