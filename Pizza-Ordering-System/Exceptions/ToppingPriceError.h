@@ -7,6 +7,7 @@ using namespace std;
 class ToppingPriceError
 {
     public:
+        ToppingPriceError();
         ToppingPriceError(string message);
         virtual ~ToppingPriceError();
         string getmessage();

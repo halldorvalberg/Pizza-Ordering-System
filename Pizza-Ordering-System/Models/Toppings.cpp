@@ -2,7 +2,8 @@
 
 Toppings::Toppings()
 {
-
+    name[0] = '\0';
+    price = 0;
 }
 
 Toppings::Toppings(char name[20], int price){
@@ -11,17 +12,19 @@ Toppings::Toppings(char name[20], int price){
     }
     this->price = price;
 }
-/*
+
 char Toppings::gettoppingname(){
-    return this->name;
+    return this->name[20];
 }
+
 int Toppings::gettoppingprice(){
     return this->price;
 }
-*/
+
 istream& operator >> (istream& in, Toppings& topping){
     cout << "Name: ";
-    in >> topping.name;
+    in >> ws;
+    in.getline(topping.name, 20);
     cout << "Price: ";
     in >> topping.price;
     return in;

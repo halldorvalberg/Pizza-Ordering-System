@@ -1,5 +1,8 @@
 #include "ToppingPriceError.h"
 
+ToppingPriceError::ToppingPriceError(){
+}
+
 ToppingPriceError::ToppingPriceError(string message)
 {
     this->message = message;

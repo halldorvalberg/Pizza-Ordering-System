@@ -19,8 +19,7 @@ void BakerMenuController::init(){
         cin >> input;
     }while(input !='D'&& input != 'd' &&
           input !='c'&& input != 'C' &&input !='q'&& input != 'Q');
-        outputstring("Please select your location: ");
-        BakerMenuController bmc;
+
     if (input == 'd' || input == 'D'){
         outputstring("Displaying all pizzas" );
         displayPizzas();

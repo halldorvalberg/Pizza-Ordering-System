@@ -9,6 +9,7 @@ using namespace std;
 class ToppingNameError
 {
     public:
+        ToppingNameError();
         ToppingNameError(string message);
         virtual ~ToppingNameError();
         string getmessage();

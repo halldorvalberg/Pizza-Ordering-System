@@ -12,11 +12,9 @@ ToppingRepController::~ToppingRepController()
     //dtor
 }
 
-void ToppingRepController::add_topping_to_menu(){
+void ToppingRepController::add_topping_to_menu(Toppings& topping){
     ///write the content of this into a file
     string name, price;
-    Toppings topping;
-    cin >> topping;
     cout << "Your toppings: " << topping;
     ofstream fout;
     fout.open("Toppings_Menu_Binary.dat", ios::app|ios::binary);
@@ -28,7 +26,7 @@ void ToppingRepController::add_topping_to_menu(){
 }
 void ToppingRepController::remove_topping_from_menu(){
     ///Remove a certain topping from menu, work in progress!!
-    cout << "I do nothing yet, replace me!!" << endl;
+    outputstring("I do nothing yet, replace me!!");
 }
 
 void ToppingRepController::init(){
@@ -54,7 +52,8 @@ void ToppingRepController::init(){
     }
     else if (input[0] == '2'){
         ///Add item to toppings menu
-        add_topping_to_menu();
+        Toppings topping;
+        AreToppingsValid(topping);
         outputstring("Enter any key to continue");
         cin >> input;
         ToppingRepController trc;
@@ -70,31 +69,41 @@ void ToppingRepController::init(){
     }
 }
 
-void ToppingRepController::AreToppingsValid(){
-    Toppings topping;
- /*   try{
-        cin >> topping;
-        if(topping.gettoppingprice() < 0){
-        throw ToppingPriceError("Invalid topping price!");
-        }
+void ToppingRepController::AreToppingsValid(Toppings& topping) throw (ToppingNameError, ToppingPriceError){
 
-        string str = topping.gettoppingname();
-        for(unsigned int i = 0; i < str.length(); i++){
-        if(!islower(str[i])&& !isupper(str[i])){
-            throw ToppingNameError("Invalid topping name!");
+    char name[20];
+
+    int price = 0;
+
+    try{
+        ///name input error isn't working like it should do
+        cin >> topping;
+        name[20] = topping.gettoppingname();
+        price = topping.gettoppingprice();
+/*
+        for(unsigned int i = 0; i < sizeof(name) ; i++){
+            if(name[i] == '\0'){
+                break;
             }
+            else if(!isalpha(name[i])){
+                throw ToppingNameError ("Not valid name");
+            }
+        }*/
+        if(price < 0){
+            throw ToppingPriceError ("Not valid topping");
         }
     }
-  //  catch(ToppingNameError n){
-    //    cout << n.getmessage() << endl;
-     //   return;
-    //}
-    catch(ToppingPriceError p){
-        cout << p.getmessage() << endl;
-        return;
+/*
+    catch(ToppingNameError e){
+        cout << "Invalid topping name" << endl;
     }
-    add_topping_to_menu();
-    */
+*/
+    catch(ToppingPriceError e){
+        cout << "Invalid topping price" << endl;
+
+    }
+    add_topping_to_menu(topping);
+
 }
 
 void ToppingRepController::displayToppings(){

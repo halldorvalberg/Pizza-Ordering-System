@@ -1,5 +1,8 @@
 #include "ToppingNameError.h"
 
+ToppingNameError::ToppingNameError(){
+}
+
 ToppingNameError::ToppingNameError(string message)
 {
     this->message = message;

@@ -12,8 +12,8 @@ class Toppings
         Toppings();
         Toppings(char name[20], int price);
 
-       // char gettoppingname();
-       // int gettoppingprice();
+        char gettoppingname();
+        int gettoppingprice();
 
         friend istream& operator >> (istream& in, Toppings& topping);
         friend ostream& operator << (ostream& out, Toppings& topping);
