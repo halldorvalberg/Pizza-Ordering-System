@@ -25,8 +25,47 @@ void ToppingRepController::add_topping_to_menu(Toppings& topping){
 
 }
 void ToppingRepController::remove_topping_from_menu(){
-    ///Remove a certain topping from menu, work in progress!!
-    outputstring("I do nothing yet, replace me!!");
+    ///Remove a certain topping from menu
+    clearScreen();
+    dispHeader();
+    displayToppings();
+
+    outputstring("Input number of element to remove: ");
+
+    char element;
+    int toremove;
+
+    cin >> element;
+
+    if(element == 'q') {
+        ToppingRepController trc;
+    }
+    else if (48 < element && element < 58) {
+        toremove = element - 49;
+    }
+
+    ifstream fin;
+    fin.open("Toppings_Menu_Binary.dat", ios::binary);
+
+    fin.seekg(0, fin.end);
+    int rec = fin.tellg() / sizeof(Toppings);
+    fin.seekg(0, fin.beg);
+
+    Toppings *data = new Toppings[rec];
+    fin.read((char*)data, sizeof(Toppings)*rec);
+    fin.close();
+
+    ofstream fout;
+    fout.open("Toppings_Menu_Binary.dat", ios::binary);
+
+    for(int i = 0; i < rec; i++) {
+        if(i != toremove){
+            fout.write((char*)(&data[i]), sizeof(Toppings));
+        }
+    }
+    fout.close();
+
+    delete [] data;
 }
 
 void ToppingRepController::init(){
@@ -71,14 +110,13 @@ void ToppingRepController::init(){
 
 void ToppingRepController::AreToppingsValid(Toppings& topping) throw (ToppingNameError, ToppingPriceError){
 
-    char name[20];
-
+    //char name[20];
     int price = 0;
 
     try{
         ///name input error isn't working like it should do
         cin >> topping;
-        name[20] = topping.gettoppingname();
+      //  name[20] = topping.gettoppingname();
         price = topping.gettoppingprice();
 /*
         for(unsigned int i = 0; i < sizeof(name) ; i++){
@@ -102,8 +140,8 @@ void ToppingRepController::AreToppingsValid(Toppings& topping) throw (ToppingNam
         cout << "Invalid topping price" << endl;
 
     }
-    add_topping_to_menu(topping);
 
+    add_topping_to_menu(topping);
 }
 
 void ToppingRepController::displayToppings(){
