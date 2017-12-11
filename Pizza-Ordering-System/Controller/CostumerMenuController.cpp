@@ -23,6 +23,7 @@ void CostumerMenuController::init(){
 
     char input;
     pizzas_ordered = 0;
+    total_price = 0;
     bool orderinprosess = true;
 
 
@@ -63,6 +64,12 @@ void CostumerMenuController::init(){
         else if (input == 'q' || input == 'Q'){
             char quit;
             view_order(neworder, pizzas_ordered);
+
+            neworder.price = total_price;
+
+            outputstring("Total price: ");
+            cout << neworder.price;
+            outputstring(" kr.\n");
 
             outputstring("Confirm Order? (y/n)");
             cin >> quit;
@@ -121,6 +128,8 @@ void CostumerMenuController::add_to_order(int e, Order &order)
 
     order.ordered[pizzas_ordered] = pizza;
     pizzas_ordered++;
+    total_price += pizza.price;
+
 }
 
 void CostumerMenuController::add_order_to_file(Order neworder)

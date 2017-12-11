@@ -20,6 +20,7 @@ class CostumerMenuController
         char name[40];
         int phone_number;
         int pizzas_ordered;
+        int total_price;
 
     protected:
 
