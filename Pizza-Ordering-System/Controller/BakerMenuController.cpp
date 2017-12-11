@@ -2,7 +2,6 @@
 
 BakerMenuController::BakerMenuController()
 {
-    clearScreen();
     init();
 }
 
@@ -12,51 +11,50 @@ BakerMenuController::~BakerMenuController()
 }
 
 void BakerMenuController::init(){
-
+    bool in_process = false;
     char input;
     do{
-        BakerMenuDisplay();
-        cin >> input;
-    }while(input !='D'&& input != 'd' &&
-          input !='c'&& input != 'C' &&input !='q'&& input != 'Q');
+        do{
+            clearScreen();
+            dispHeader();
+            BakerMenuDisplay();
+            cin >> input;
+        }while(input !='1'&& input != '2' &&
+               input !='Q'&& input != 'q');
 
-    if (input == 'd' || input == 'D'){
-        outputstring("Displaying all pizzas" );
-        displayPizzas();
-        BakerMenuController bmc;
-    }
-    else if(input == 'c' || input == 'C'){
-        cout << "Change a pizza" << endl;
-        BakerMenuController bmc;
 
-    }
-    else if (input == 'q' || input == 'Q'){
-        MainMenuController mmc;
-    }
-    else{
-        cout << "Invalid input" << endl;
-    }
+        if (input == '1'){
+            outputstring("Displaying all pizzas" );
+            clearScreen();
+            dispHeader();
+            BakerOrderView();
+            outputstring("Input any key to continue");
+            char cont;
+            cin >> cont;
+
+        }
+        else if(input == '2'){
+            ChangePizzaStatus();
+        }
+        else if (input == 'q' || input == 'Q'){
+            break;
+        }
+        else{
+            cout << "Invalid input" << endl;
+        }
+    }while(in_process == true);
 }
-void BakerMenuController::displayPizzas(){
-    LocationRepo location;
-    OrderRepo order;
 
-    string str;
-    cout << "Please select your location" << endl;
-    cin >> str;
+void BakerMenuController::ChangePizzaStatus()
+{
+    clearScreen();
+    dispHeader();
+    BakerOrderView();
+    outputstring("Select Order to mark ready or 0 to return: ");
+    int input;
+    cin >> input;
+    if(input != 0) {
+        baker_mark_element_ready(input);
+    }
 
-    location.selectLocation(str);
-    cout << "Displaying all pizza orders at your location" << endl;
-
-    order.DisplayAllOrdersAtLocationBaker();
-}
-void BakerMenuController::ChangePizzaStatus(){
-    int ordernr;
-    OrderRepo order;
-
-    displayPizzas();
-    cout << "Please select the order which is ready" << endl;
-    cin >> ordernr;
-    order.changeOrderBaker();
-    cout << "Order has been changed!" << endl;
 }

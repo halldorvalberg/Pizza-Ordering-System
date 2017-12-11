@@ -85,7 +85,7 @@
 1512991135 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\adminmenucontroller.h
 	"MainMenuController.h"
 
-1513002560 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\bakermenucontroller.cpp
+1513003341 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\bakermenucontroller.cpp
 	"BakerMenuController.h"
 
 1512991135 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\bakermenucontroller.h
@@ -193,7 +193,7 @@
 1512991135 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\pizzarepcontroller.h
 	"MainMenuController.h"
 
-1513001390 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\pizzarepcontroller.cpp
+1513003805 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\pizzarepcontroller.cpp
 	"PizzaRepController.h"
 
 1512999672 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\view\globalview.h
@@ -204,7 +204,7 @@
 	"GlobalTools.h"
 	"Order.h"
 
-1513002760 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\view\globalview.cpp
+1513002922 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\view\globalview.cpp
 	"GlobalView.h"
 
 1512991135 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\view\pizzarepmenuview.h
@@ -220,14 +220,14 @@
 	<vector>
 	"Toppings.h"
 
-1512991135 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\models\toppings.h
+1513003033 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\models\toppings.h
 	<iostream>
 	<fstream>
 
 1512991926 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\models\pizza.cpp
 	"Pizza.h"
 
-1512991135 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\models\toppings.cpp
+1513003033 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\models\toppings.cpp
 	"Toppings.h"
 
 1512740795 source:c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\controller\adminmenucontroller.cpp
@@ -348,19 +348,22 @@
 1512991135 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\view\toppingrepmenuview.cpp
 	"ToppingRepMenuView.h"
 
-1512991135 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingnameerror.h
+1513003033 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingnameerror.h
 	<iostream>
 	<string>
 
-1512991135 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingpriceerror.h
+1513003033 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingpriceerror.h
 	<string>
 
-1512991135 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\toppingrepcontroller.cpp
+1513003033 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\toppingrepcontroller.cpp
 	"ToppingRepController.h"
 
-1512991135 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\toppingrepcontroller.h
+1513003033 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\controller\toppingrepcontroller.h
 	"MainMenuController.h"
+	"ToppingNameError.h"
+	"ToppingPriceError.h"
 	<iostream>
+	<algorithm>
 
 1512991135 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\pizzanameerror.cpp
 	"PizzaNameError.h"
@@ -374,10 +377,10 @@
 1512991135 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\pizzapriceerror.h
 	<string>
 
-1512991135 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingnameerror.cpp
+1513003033 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingnameerror.cpp
 	"ToppingNameError.h"
 
-1512991135 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingpriceerror.cpp
+1513003033 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingpriceerror.cpp
 	"ToppingPriceError.h"
 
 1512740795 c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\repos\orderrepo.h

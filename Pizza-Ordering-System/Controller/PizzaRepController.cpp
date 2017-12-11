@@ -79,25 +79,23 @@ void PizzaRepController::add_to_menu()
 
 }
 
+
 void PizzaRepController::remove_element_from_menu()
 {
     clearScreen();
     dispHeader();
     display_menu();
 
-    outputstring("Input number of element to remove: ");
+    outputstring("Input number of element to remove or q to cancel: ");
 
     char element;
     int toremove;
 
     cin >> element;
 
-    if(element == 'q') {
-        PizzaRepController prc;
-    }
-    else if (48 < element && element < 58) {
+    if(element != 'q' && 48 < element && element < 58) {
         toremove = element - 49;
-    }
+
 
     ifstream fin;
     fin.open("Pizza_Menu_Binary.dat", ios::binary);
@@ -119,6 +117,7 @@ void PizzaRepController::remove_element_from_menu()
     fout.close();
 
     delete [] data;
+    }
 
 }
 
