@@ -11,34 +11,34 @@ LocationRepo::~LocationRepo()
 }
 
 ///valid input of the location
-void LocationRepo::validLocation(string str){
+void LocationRepo::validLocation(){
+    string str;
+    cin >> str;
+
     try{
         for(unsigned int i = 0; i < str.size(); i++){
-            if(str[i] < 65 && str[i] > 123){
+            if(!isalpha(str[i])){
                 throw LocationException("Invalid location");
             }
-            else if(str[i] == '[' && str[i] == ']' && str[i] == '^' && str[i] == '`'){
-                throw LocationException("Invalid location");
-            }
+
         }
     }
 
     catch (LocationException ex){
         cout << ex.getmessage() << endl;
     }
+    ///if valid input then it goes to this
+    Locations location(str);
+    AddLocation(location);
 }
 
 ///checking if the location which is put in is on the list (valid)
-void LocationRepo::AddLocation(){
-    string str;
-    Locations location(str);
-    cin >> str;
-    //validLocation(str);
+void LocationRepo::AddLocation(Locations& location){
     ofstream fout;
 
     fout.open("Locations.txt", ios::app);
     if(fout.is_open()){
-        fout << str;
+        fout << location;
         fout.close();
     }
     else{
@@ -47,30 +47,25 @@ void LocationRepo::AddLocation(){
 }
 
 void LocationRepo::DisplayAllLocations(){
-    string stri, str;
-    Locations location(stri);
-    validLocation(str);
+    string str;
+    Locations location;
     ifstream fin;
-    try{
     fin.open("Locations.txt");
+
     if(fin.is_open()){
-        ///if there is a match then it goes out of the loop, otherwise it runs to the end
+
         while(!fin.eof()){
           getline(fin, str);
             cout << location << endl;
             return;
         }
-    throw LocationException("Not a valid locaiton");
 
     fin.close();
     }
     else{
         cout << "File is not open!" << endl;
     }
-    }
-    catch (LocationException l){
-        cout << l.getmessage() << endl;
-    }
+
 }
 
 void LocationRepo::selectLocation(string bb){
@@ -86,5 +81,8 @@ void LocationRepo::selectLocation(string bb){
             }
         }
         fin.close();
+    }
+    else{
+        cout << "File is not open" << endl;
     }
 }

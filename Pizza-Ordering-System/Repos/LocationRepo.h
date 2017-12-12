@@ -12,10 +12,10 @@ class LocationRepo
     public:
         LocationRepo();
         virtual ~LocationRepo();
-        void AddLocation();
+        void AddLocation(Locations& location);
         void DisplayAllLocations();
         void selectLocation(string bb);
-        void validLocation(string str);
+        void validLocation();
 
     protected:
 

@@ -7,9 +7,9 @@ using namespace std;
 class Locations
 {
     public:
+        Locations();
         Locations(string location);
         virtual ~Locations();
-        string getLocation();
         friend istream& operator >> (istream& in, Locations& place);
         friend ostream& operator << (ostream& out, Locations& place);
 

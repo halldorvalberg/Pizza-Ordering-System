@@ -110,22 +110,18 @@ void ToppingRepController::init(){
 
 void ToppingRepController::AreToppingsValid(Toppings& topping) throw (ToppingNameError, ToppingPriceError){
 
-    char name[20];
+    string name;
     int price = 0;
 
     try{
         ///name input error isn't working like it should do
         cin >> topping;
-        name[20] = topping.gettoppingname();
         price = topping.gettoppingprice();
-
-        for(unsigned int i = 0; i < 20 ; i++){
-                ///if there is end to the input, break out of loop
-            if (i < 20 && name[i] == '\0'){
-                break;
-            }
-            else if(!isalpha(name[i])){
-                throw ToppingNameError("Invalid Pizza name");
+        name = topping.gettoppingname();
+        for(unsigned int i = 0; i < name.length(); i++){
+            ///if there is end to the input, break out of loop
+             if(!isalpha(name[i])){
+                throw ToppingNameError("Invalid toppings name");
             }
         }
 
