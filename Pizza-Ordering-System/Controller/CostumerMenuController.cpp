@@ -250,19 +250,21 @@ Toppings CostumerMenuController::choose_topping_menu(){
 
     displayToppings();
 
-    outputstring("Please, choose from the menu, or input 0 to exit : ");
+    outputstring("Please, choose from the menu, anything else will exit this menu : ");
 
     int user_choice;
 
     cin >> user_choice;
 
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
     if(user_choice < (data.size() + 1) && user_choice > 0){
         cout << "You have added : " << data[user_choice - 1] << endl;
         return data[user_choice - 1];
-    }else if(user_choice == 0){
-        return Toppings();
     }else{
-        choose_topping_menu();
+        cout << "You have chosen to exit." << endl;
+        return Toppings();
     }
 
 }
