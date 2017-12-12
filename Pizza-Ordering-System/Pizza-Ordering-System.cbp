@@ -65,6 +65,8 @@
 		<Unit filename="Exceptions/PizzaNameError.h" />
 		<Unit filename="Exceptions/PizzaPriceError.cpp" />
 		<Unit filename="Exceptions/PizzaPriceError.h" />
+		<Unit filename="Exceptions/SizeException.cpp" />
+		<Unit filename="Exceptions/SizeException.h" />
 		<Unit filename="Exceptions/ToppingNameError.cpp" />
 		<Unit filename="Exceptions/ToppingNameError.h" />
 		<Unit filename="Exceptions/ToppingPriceError.cpp" />

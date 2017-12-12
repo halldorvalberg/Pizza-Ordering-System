@@ -65,8 +65,6 @@ void GlobalView::view_order(Order order, int rec)
 void GlobalView::displayToppings(){
 
     Toppings topping;
-    clearScreen();
-    dispHeader();
     cout << "Topping menu: " << endl;
 
     ifstream fin;
