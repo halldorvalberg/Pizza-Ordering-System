@@ -17,7 +17,7 @@ class CostumerMenuController
         void get_id();
         void add_order_to_file(Order neworder);
         void addToppingsToOrder(int e, Pizza &order);
-        void InputForEachPizza(int amount, int menu);
+        Toppings choose_topping_menu();
 
         char name[40];
         int phone_number;

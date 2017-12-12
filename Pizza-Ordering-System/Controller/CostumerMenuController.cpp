@@ -1,5 +1,6 @@
 #include "CostumerMenuController.h"
 
+#include<algorithm>
 #include<string>
 #include<iostream>
 using namespace std;
@@ -135,41 +136,60 @@ void CostumerMenuController::add_to_order(int e, Order &order)
 }
 
 void CostumerMenuController::customOrder(Order &order){
-    ///WIP
-    clearScreen();
-    dispHeader();
-    displayToppings();
+    Toppings total_toppings[20];
+    Toppings to_add;
+    int sz;
+    double base_price = 1500;
+    double total_price = base_price;
+    char user_input;
+    bool exit = false;
+    int counter = 0;
 
-    int amount;
-    outputstring("How many toppings do you want on your pizza? ");
-    cin >> amount;
-    outputstring("\nSelect Toppings to add to order or 0 (zero) to return:");
-    int menu;
-    do{
-    cin >> menu;
-    }while(menu < 0);
+    while(exit != true){
+        ///WIP
+        clearScreen();
+        dispHeader();
 
-    if(menu == 0){
-        CostumerMenuController cmc;
-    }
-    else{
-       InputForEachPizza(amount, menu);
+        outputstring("The base price for pizza is : 1500kr.\nYour total toppings may not exceed 20.\n");
 
+        if(counter != 0){
+            outputstring("Your current toppings are : ");
+            for(int i = 0; i < counter;i++){
+                cout << total_toppings[i] << endl;
+            }
+            cout << "Their total count is : " << counter << endl << endl;
+        }
+
+        if(counter != 20){
+            to_add = choose_topping_menu();
+
+            if(to_add.gettoppingprice() == 0){
+                // the user has chosen to exit toppings menu
+            }else{
+                total_toppings[counter++] = to_add;
+            }
+
+            cout << "***********\nContinue adding toppings? Input either 0 or q if you're done to process." << endl;
+
+            cin >> user_input;
+        }
+
+
+        if((user_input == '0' || user_input == 'q') || counter == 20){
+            outputstring("Your pizza is complete");
+
+            for(auto &x : total_toppings){
+                total_price += x.gettoppingprice();
+            }
+
+            // have to add size of pizza
+
+            cout << "The total cost of your pizza is : " << total_price << endl;
+
+            system("pause");
+            exit = true;
+        }
     }
-}
-void CostumerMenuController::InputForEachPizza(int amount, int menu){
-    ///WIP
-    Pizza pizza;
-    Order order;
-    int counter = 1;
-    double basepizza = 1500; ///Price of basic pizza with nothing on it
-    int size = 0;
-    while(counter < amount){
-    addToppingsToOrder(menu, pizza);
-    }
-    cout << "choose a size for your pizza";
-    cin >> size;
-    total_price = pizza.price + basepizza;
 
 }
 
@@ -207,5 +227,42 @@ void CostumerMenuController::addToppingsToOrder(int e, Pizza &order){
     orderr.ordered[pizzas_ordered] = order;
     pizzas_ordered++;
     total_price += order.price;
+
+}
+
+
+Toppings CostumerMenuController::choose_topping_menu(){
+    Toppings topping;
+    vector<Toppings> data;
+    //load in data
+    ifstream fin;
+    fin.open("Toppings_Menu_Binary.dat", ios::binary);
+
+    fin.seekg(0, fin.end);
+    int records = fin.tellg() / sizeof(Toppings);
+    fin.seekg(0, fin.beg);
+
+    for(int i = 0; i < records; i++){
+        fin.read((char*)(&topping), sizeof(Toppings));
+        data.push_back(topping);
+    }
+    fin.close();
+
+    displayToppings();
+
+    outputstring("Please, choose from the menu, or input 0 to exit : ");
+
+    int user_choice;
+
+    cin >> user_choice;
+
+    if(user_choice < (data.size() + 1) && user_choice > 0){
+        cout << "You have added : " << data[user_choice - 1] << endl;
+        return data[user_choice - 1];
+    }else if(user_choice == 0){
+        return Toppings();
+    }else{
+        choose_topping_menu();
+    }
 
 }

@@ -13,8 +13,8 @@ Toppings::Toppings(char name[20], int price){
     this->price = price;
 }
 
-char Toppings::gettoppingname(){
-    return this->name[20];
+string Toppings::gettoppingname(){
+    return this->name;
 }
 
 int Toppings::gettoppingprice(){

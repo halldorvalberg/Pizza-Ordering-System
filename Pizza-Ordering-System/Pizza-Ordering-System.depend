@@ -685,3 +685,236 @@
 1512991135 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\locationexception.cpp
 	"LocationException.h"
 
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\controller\adminmenucontroller.cpp
+	"AdminMenuController.h"
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\controller\adminmenucontroller.h
+	"MainMenuController.h"
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\controller\mainmenucontroller.h
+	<string>
+	<iostream>
+	<fstream>
+	<vector>
+	<ctime>
+	"GlobalTools.h"
+	"MainMenuView.h"
+	"AdminMenuView.h"
+	"DisplayString.h"
+	"BakerMenuView.h"
+	"CostumerMenuView.h"
+	"SalesmanMenuView.h"
+	"GlobalView.h"
+	"PizzaRepMenuView.h"
+	"ToppingRepMenuView.h"
+	"AdminMenuController.h"
+	"BakerMenuController.h"
+	"CostumerMenuController.h"
+	"SalesmanMenuController.h"
+	"PizzaRepController.h"
+	"ToppingRepController.h"
+	"Pizza.h"
+	"Toppings.h"
+	"Order.h"
+	"ToppingNameError.h"
+	"ToppingPriceError.h"
+	"OrderRepo.h"
+	"Locations.h"
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\tools\globaltools.h
+	<stdlib.h>
+	<cstdlib>
+	<fstream>
+	<string>
+	"Pizza.h"
+	"Order.h"
+
+1513080588 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\models\pizza.h
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	"Toppings.h"
+
+1513085600 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\models\toppings.h
+	<iostream>
+	<fstream>
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\models\order.h
+	<vector>
+	<iostream>
+	<ctime>
+	"Pizza.h"
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\view\mainmenuview.h
+	<iostream>
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\view\adminmenuview.h
+	<iostream>
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\view\displaystring.h
+	<iostream>
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\view\bakermenuview.h
+	<iostream>
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\view\costumermenuview.h
+	<iostream>
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\view\salesmanmenuview.h
+	<iostream>
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\view\globalview.h
+	<iostream>
+	<fstream>
+	"Pizza.h"
+	"DisplayString.h"
+	"GlobalTools.h"
+	"Order.h"
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\view\pizzarepmenuview.h
+	<iostream>
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\view\toppingrepmenuview.h
+	<iostream>
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\controller\bakermenucontroller.h
+	"MainMenuController.h"
+
+1513089156 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\controller\costumermenucontroller.h
+	"MainMenuController.h"
+	"ToppingRepController.h"
+	"Order.h"
+
+1513083530 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\controller\toppingrepcontroller.h
+	"MainMenuController.h"
+	"ToppingNameError.h"
+	"ToppingPriceError.h"
+	<iostream>
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingnameerror.h
+	<iostream>
+	<string>
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingpriceerror.h
+	<string>
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\controller\salesmanmenucontroller.h
+	"MainMenuController.h"
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\controller\pizzarepcontroller.h
+	"MainMenuController.h"
+	"PizzaNameError.h"
+	"PizzaPriceError.h"
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\pizzanameerror.h
+	<string>
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\pizzapriceerror.h
+	<string>
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\repos\orderrepo.h
+	"LocationRepo.h"
+	"MainMenuController.h"
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\repos\locationrepo.h
+	"LocationException.h"
+	"Locations.h"
+	<fstream>
+	<string>
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\locationexception.h
+	<string>
+
+1513080352 c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\models\locations.h
+	<iostream>
+	<string>
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\controller\bakermenucontroller.cpp
+	"BakerMenuController.h"
+
+1513090103 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\controller\costumermenucontroller.cpp
+	"CostumerMenuController.h"
+	<algorithm>
+	<string>
+	<iostream>
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\controller\mainmenucontroller.cpp
+	"MainMenuController.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\controller\pizzarepcontroller.cpp
+	"PizzaRepController.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\controller\salesmanmenucontroller.cpp
+	"SalesmanMenuController.h"
+
+1513085661 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\controller\toppingrepcontroller.cpp
+	"ToppingRepController.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\locationexception.cpp
+	"LocationException.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\pizzanameerror.cpp
+	"PizzaNameError.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\pizzapriceerror.cpp
+	"PizzaPriceError.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingnameerror.cpp
+	"ToppingNameError.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingpriceerror.cpp
+	"ToppingPriceError.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\main.cpp
+	<iostream>
+	"MainMenuController.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\models\locations.cpp
+	"Locations.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\models\order.cpp
+	"Order.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\models\pizza.cpp
+	"Pizza.h"
+
+1513085561 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\models\toppings.cpp
+	"Toppings.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\repos\locationrepo.cpp
+	"LocationRepo.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\repos\orderrepo.cpp
+	"OrderRepo.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\tools\globaltools.cpp
+	"GlobalTools.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\view\adminmenuview.cpp
+	"AdminMenuView.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\view\bakermenuview.cpp
+	"BakerMenuView.h"
+
+1513081176 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\view\costumermenuview.cpp
+	"CostumerMenuView.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\view\displaystring.cpp
+	"DisplayString.h"
+
+1513088734 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\view\globalview.cpp
+	"GlobalView.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\view\mainmenuview.cpp
+	"MainMenuView.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\view\pizzarepmenuview.cpp
+	"PizzaRepMenuView.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\view\salesmanmenuview.cpp
+	"SalesmanMenuView.h"
+
+1513080352 source:c:\users\danilkant\documents\github\pizza-ordering-system\pizza-ordering-system\view\toppingrepmenuview.cpp
+	"ToppingRepMenuView.h"
+

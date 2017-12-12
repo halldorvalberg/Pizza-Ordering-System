@@ -24,6 +24,7 @@ class Pizza
         int price;
         int sz;
         char name[50];
+        Toppings toppings[20];
         //vector<Toppings> toppingsVector;
         //vector<string> toppings;
 };

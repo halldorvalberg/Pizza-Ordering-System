@@ -110,13 +110,13 @@ void ToppingRepController::init(){
 
 void ToppingRepController::AreToppingsValid(Toppings& topping) throw (ToppingNameError, ToppingPriceError){
 
-    char name[20];
+    string name;
     int price = 0;
 
     try{
         ///name input error isn't working like it should do
         cin >> topping;
-        name[20] = topping.gettoppingname();
+        name = topping.gettoppingname();
         price = topping.gettoppingprice();
 
         for(unsigned int i = 0; i < 20 ; i++){
