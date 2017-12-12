@@ -82,6 +82,7 @@ void PizzaRepController::add_to_menu()
 
 void PizzaRepController::remove_element_from_menu()
 {
+    ///Removes a certain pizza from menu
     clearScreen();
     dispHeader();
     display_menu();
@@ -99,9 +100,11 @@ void PizzaRepController::remove_element_from_menu()
 
     ifstream fin;
     fin.open("Pizza_Menu_Binary.dat", ios::binary);
+
     fin.seekg(0, fin.end);
     int rec = fin.tellg() / sizeof(Pizza);
     fin.seekg(0, fin.beg);
+
     Pizza *data = new Pizza[rec];
     fin.read((char*)data, sizeof(Pizza)*rec);
     fin.close();
@@ -122,14 +125,16 @@ void PizzaRepController::remove_element_from_menu()
 }
 
 void isPizzainputValid(){
+    ///handles error in pizza input, doesn't do anything
     Pizza pizza;
+
     try{
         cin >> pizza;
         if (pizza.price < 0){
             throw PizzaPriceError("Not valid price");
         }
         if(pizza.sz < 0){
-            cout << "Invalid pizza size" << endl;
+            throw SizeException("Invalid size");
         }
 
         for(unsigned int i = 0; i < 50 ; i++){
@@ -142,12 +147,16 @@ void isPizzainputValid(){
                 throw PizzaNameError("Not valid name");
             }
         }
-
     }
+
     catch(PizzaPriceError p){
         cout << p.getmessage() << endl;
+    }
+    catch(SizeException szi){
+        cout << szi.getMesssage() << endl;
     }
     catch(PizzaNameError n){
         cout << n.getmessage() << endl;
     }
+
 }

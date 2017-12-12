@@ -14,11 +14,15 @@ LocationRepo::~LocationRepo()
 void LocationRepo::validLocation(string str){
     try{
         for(unsigned int i = 0; i < str.size(); i++){
-        if (!isalpha(str[i])){
-            throw LocationException("Invalid location");
-        }
+            if(str[i] < 65 && str[i] > 123){
+                throw LocationException("Invalid location");
+            }
+            else if(str[i] == '[' && str[i] == ']' && str[i] == '^' && str[i] == '`'){
+                throw LocationException("Invalid location");
+            }
         }
     }
+
     catch (LocationException ex){
         cout << ex.getmessage() << endl;
     }
@@ -50,12 +54,14 @@ void LocationRepo::DisplayAllLocations(){
     try{
     fin.open("Locations.txt");
     if(fin.is_open()){
+        ///if there is a match then it goes out of the loop, otherwise it runs to the end
         while(!fin.eof()){
           getline(fin, str);
             cout << location << endl;
             return;
         }
     throw LocationException("Not a valid locaiton");
+
     fin.close();
     }
     else{
@@ -71,6 +77,7 @@ void LocationRepo::selectLocation(string bb){
     string str;
     ifstream fin;
     fin.open("Location.txt");
+
     if(fin.is_open()){
         while(!fin.eof()){
             getline(fin, str);

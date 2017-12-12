@@ -264,10 +264,11 @@
 1512740795 c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\view\pizzarepmenuview.h
 	<iostream>
 
-1513013769 c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\controller\pizzarepcontroller.h
+1513077695 c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\controller\pizzarepcontroller.h
 	"MainMenuController.h"
 	"PizzaNameError.h"
 	"PizzaPriceError.h"
+	"SizeException.h"
 
 1512999870 c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\models\pizza.h
 	<iostream>
@@ -280,7 +281,7 @@
 	<iostream>
 	<fstream>
 
-1513014099 source:c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\controller\pizzarepcontroller.cpp
+1513078390 source:c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\controller\pizzarepcontroller.cpp
 	"PizzaRepController.h"
 
 1512999870 source:c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\models\pizza.cpp
@@ -402,7 +403,7 @@
 	<fstream>
 	<string>
 
-1513003952 source:c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\repos\locationrepo.cpp
+1513078420 source:c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\repos\locationrepo.cpp
 	"LocationRepo.h"
 
 1512743024 source:c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\repos\orderrepo.cpp
@@ -684,4 +685,10 @@
 
 1512991135 source:c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\locationexception.cpp
 	"LocationException.h"
+
+1513077549 c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\sizeexception.h
+	<string>
+
+1513077527 source:c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\sizeexception.cpp
+	"SizeException.h"
 

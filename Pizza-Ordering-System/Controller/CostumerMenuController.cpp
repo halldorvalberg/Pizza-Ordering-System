@@ -198,11 +198,10 @@ void CostumerMenuController::addToppingsToOrder(int e, Pizza &order){
     fin.seekg(0, fin.beg);
 
     if(records >= e) {
-
-    for(int i = 0; i < e; i++){
-        fin.read((char*)(&topping), sizeof(Toppings));
-    }
-    fin.close();
+        for(int i = 0; i < e; i++){
+            fin.read((char*)(&topping), sizeof(Toppings));
+        }
+        fin.close();
     }
     orderr.ordered[pizzas_ordered] = order;
     pizzas_ordered++;

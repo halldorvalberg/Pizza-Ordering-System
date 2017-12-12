@@ -4,6 +4,7 @@
 #include "MainMenuController.h"
 #include "PizzaNameError.h"
 #include "PizzaPriceError.h"
+#include "SizeException.h"
 
 class PizzaRepController
 {
