@@ -37,7 +37,8 @@ void PizzaRepController::init()
     }
     else if (input[0] == '2'){
         ///Add item to pizza menu
-        add_to_menu();
+        //add_to_menu();
+        isPizzainputValid();
         outputstring("Enter any key to continue");
         cin >> input;
         PizzaRepController prc;
@@ -54,15 +55,15 @@ void PizzaRepController::init()
 }
 
 
-void PizzaRepController::add_to_menu()
+void PizzaRepController::add_to_menu(Pizza& pizza)
 {
     string name, price, size;
     vector<string> toppings;
 
     dispHeader();
 
-    Pizza pizza;
-    cin >> pizza;
+    //Pizza pizza;
+    //cin >> pizza;
     outputstring("\nYour pizza: \n");
     cout << pizza;
 
@@ -124,39 +125,43 @@ void PizzaRepController::remove_element_from_menu()
 
 }
 
-void isPizzainputValid(){
+void PizzaRepController::isPizzainputValid(){
     ///handles error in pizza input, doesn't do anything
     Pizza pizza;
 
     try{
         cin >> pizza;
-        if (pizza.price < 0){
-            throw PizzaPriceError("Not valid price");
+
+        for(unsigned int i = 0; i < 50 ; i++){
+            ///no input at the place in the name, go out of loop
+            ///name is valid at that point
+            if (i < 50 && pizza.name[i] == '\0'){
+                break;
+            }
+            else if(!isalpha(pizza.name[i])){
+                throw PizzaNameError("Invalid Pizza name");
+            }
+
         }
         if(pizza.sz < 0){
             throw SizeException("Invalid size");
         }
-
-        for(unsigned int i = 0; i < 50 ; i++){
-            ///value for A-Z and A-Z in ascii table
-            if(pizza.name[i] < 65 && pizza.name[i] > 123){
-                throw PizzaNameError ("Not valid name");
-            }
-            ///the input between 91 and 96 in Ascii table except for \ which wasnt working
-            else if(pizza.name[i] == '[' && pizza.name[i] == ']' && pizza.name[i] == '^' && pizza.name[i] == '`'){
-                throw PizzaNameError("Not valid name");
-            }
+        if (pizza.price < 0){
+            throw PizzaPriceError("Not valid price");
         }
+
+    }
+    catch(PizzaNameError n){
+        cout << n.getmessage() << endl;
+    }
+    catch(SizeException szi){
+        cout << szi.getMesssage() << endl;
     }
 
     catch(PizzaPriceError p){
         cout << p.getmessage() << endl;
     }
-    catch(SizeException szi){
-        cout << szi.getMesssage() << endl;
-    }
-    catch(PizzaNameError n){
-        cout << n.getmessage() << endl;
-    }
-
+    ///if manage to go through all the input check then a new pizza can be added
+    ///otherwise this code won't get executed
+    add_to_menu(pizza);
 }

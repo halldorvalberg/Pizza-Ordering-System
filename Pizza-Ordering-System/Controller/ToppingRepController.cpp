@@ -120,15 +120,15 @@ void ToppingRepController::AreToppingsValid(Toppings& topping) throw (ToppingNam
         price = topping.gettoppingprice();
 
         for(unsigned int i = 0; i < 20 ; i++){
-            ///value for A-Z and A-Z in ascii table
-            if(name[i] < 65 && name[i] > 123){
-                throw ToppingNameError ("Not valid name");
+                ///if there is end to the input, break out of loop
+            if (i < 20 && name[i] == '\0'){
+                break;
             }
-            ///the input between 91 and 96 in Ascii table except for \ which wasnt working
-            else if(name[i] == '[' && name[i] == ']' && name[i] == '^' && name[i] == '`'){
-                throw ToppingNameError ("Not valid name");
+            else if(!isalpha(name[i])){
+                throw ToppingNameError("Invalid Pizza name");
             }
         }
+
         if(price < 0){
             throw ToppingPriceError ("Not valid topping");
         }

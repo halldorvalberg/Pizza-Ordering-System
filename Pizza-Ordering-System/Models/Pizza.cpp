@@ -36,7 +36,7 @@ ofstream& operator << (ofstream& out, Pizza& pizza)
 
 ostream& operator << (ostream& out, Pizza& pizza)
 {
-    out << "Name: " << pizza.name << "\tPrice: " << pizza.price << " kr.\tSize: " << pizza.sz;
+    out << "Name: " << pizza.name << "\t Size: " << pizza.sz << "\tPrice: " << pizza.price << " kr";
     return out;
 }
 istream& operator >> (istream& in, Pizza& pizza)
@@ -44,10 +44,10 @@ istream& operator >> (istream& in, Pizza& pizza)
     cout << "Input Pizza name (50): ";
     in >> ws;
     in.getline(pizza.name, 50);
-    cout << "input Pizza price: ";
-    in >> pizza.price;
     cout << "Input Pizza size: ";
     in >> pizza.sz;
+     cout << "input Pizza price: ";
+    in >> pizza.price;
 
     return in;
 }
