@@ -2,8 +2,6 @@
 
 ToppingRepController::ToppingRepController()
 {
-    clearScreen();
-    dispHeader();
     init();
 }
 
@@ -12,7 +10,52 @@ ToppingRepController::~ToppingRepController()
     //dtor
 }
 
+
+void ToppingRepController::init(){
+    string input;
+    do{
+        clearScreen();
+        dispHeader();
+        do{
+            ToppingRepMenuDisplay();
+            cin >> input;
+            clearScreen();
+        }while(input[0] != '1' &&
+               input[0] != '2' &&
+               input[0] != '3' &&
+               input[0] != 'q');
+
+        if(input[0] == '1'){
+            ///View Toppings Menu
+            clearScreen();
+            displayToppings();
+            outputstring("");
+            outputstring("Enter any key to exit");
+            cin >> input;
+        }
+        else if (input[0] == '2'){
+            ///Add item to toppings menu
+            Toppings topping;
+            AreToppingsValid(topping);
+            outputstring("Enter any key to continue");
+            cin >> input;
+        }
+        else if (input[0] == '3'){
+            ///Remove Item from toppings menu
+            remove_topping_from_menu();
+        }
+        else if (input[0] == 'q'){
+            break;
+        }
+    }while(true);
+
+}
+
 void ToppingRepController::add_topping_to_menu(Toppings& topping){
+
+    clearScreen();
+    dispHeader();
+
     ///write the content of this into a file
     string name, price;
     cout << "Your topping: " << topping;
@@ -68,45 +111,6 @@ void ToppingRepController::remove_topping_from_menu(){
     delete [] data;
 }
 
-void ToppingRepController::init(){
-    string input;
-
-    do{
-        ToppingRepMenuDisplay();
-        cin >> input;
-        clearScreen();
-    }while(input[0] != '1' &&
-           input[0] != '2' &&
-           input[0] != '3' &&
-           input[0] != 'q');
-
-    if(input[0] == '1'){
-        ///View Toppings Menu
-        clearScreen();
-        displayToppings();
-        outputstring("");
-        outputstring("Enter any key to exit");
-        cin >> input;
-        ToppingRepController trc;
-    }
-    else if (input[0] == '2'){
-        ///Add item to toppings menu
-        Toppings topping;
-        AreToppingsValid(topping);
-        outputstring("Enter any key to continue");
-        cin >> input;
-        ToppingRepController trc;
-    }
-    else if (input[0] == '3'){
-        ///Remove Item from toppings menu
-        remove_topping_from_menu();
-        ToppingRepController trc;
-    }
-    else if (input[0] == 'q'){
-        ///Return to Admin Menu
-        AdminMenuController amc;
-    }
-}
 
 void ToppingRepController::AreToppingsValid(Toppings& topping) throw (ToppingNameError, ToppingPriceError){
 

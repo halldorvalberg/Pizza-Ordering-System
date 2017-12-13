@@ -2,8 +2,7 @@
 
 PizzaRepController::PizzaRepController()
 {
-    clearScreen();
-    dispHeader();
+
     init();
 }
 
@@ -15,43 +14,43 @@ PizzaRepController::~PizzaRepController()
 void PizzaRepController::init()
 {
     string input;
-
     do{
-        PizzaRepMenuDisplay();
-        cin >> input;
-        clearScreen();
-    }while(input[0] != '1' &&
-           input[0] != '2' &&
-           input[0] != '3' &&
-           input[0] != 'q');
+            clearScreen();
+            dispHeader();
+        do{
+            PizzaRepMenuDisplay();
+            cin >> input;
+            clearScreen();
+        }while(input[0] != '1' &&
+               input[0] != '2' &&
+               input[0] != '3' &&
+               input[0] != 'q');
 
-    if(input[0] == '1'){
-        ///View Pizza Menu
-        clearScreen();
-        dispHeader();
-        display_menu();
-        outputstring("");
-        outputstring("Enter any key to exit");
-        cin >> input;
-        PizzaRepController prc;
-    }
-    else if (input[0] == '2'){
-        ///Add item to pizza menu
-        //add_to_menu();
-        isPizzainputValid();
-        outputstring("Enter any key to continue");
-        cin >> input;
-        PizzaRepController prc;
-    }
-    else if (input[0] == '3'){
-        ///Remove Item from pizza menu
-        remove_element_from_menu();
-        PizzaRepController prc;
-    }
-    else if (input[0] == 'q'){
-        ///Return to Admin Menu
-        AdminMenuController amc;
-    }
+        if(input[0] == '1'){
+            ///View Pizza Menu
+            clearScreen();
+            dispHeader();
+            display_menu();
+            outputstring("");
+            outputstring("Enter any key to exit");
+            cin >> input;
+        }
+        else if (input[0] == '2'){
+            ///Add item to pizza menu
+            //add_to_menu();
+            isPizzainputValid();
+            outputstring("Enter any key to continue");
+            cin >> input;
+        }
+        else if (input[0] == '3'){
+            ///Remove Item from pizza menu
+            remove_element_from_menu();
+                }
+        else if (input[0] == 'q'){
+            ///Return to Admin Menu
+            break;
+        }
+    }while(true);
 }
 
 
@@ -59,7 +58,7 @@ void PizzaRepController::add_to_menu(Pizza& pizza)
 {
     string name, price, size;
     vector<string> toppings;
-
+    clearScreen();
     dispHeader();
 
     //Pizza pizza;

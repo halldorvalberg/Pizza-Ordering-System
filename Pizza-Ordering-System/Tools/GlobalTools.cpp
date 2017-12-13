@@ -81,9 +81,46 @@ void GlobalTools::baker_mark_element_ready(int input)
     fout.close();
 
     delete[] one;
-
-
 }
+
+
+void GlobalTools::sales_mark_element_ready(int input)
+{
+
+    ifstream fin;
+
+    fin.open("Ordered_Pizzas_Binary.dat", ios::binary);
+
+    fin.seekg(0, fin.end);
+    int rec = fin.tellg() / sizeof(Order);
+    fin.seekg(0, fin.beg);
+
+    Order *one = new Order[rec];
+    fin.read((char*)one, sizeof(Order)*rec);
+
+    fin.close();
+
+    int not_ready = 0;
+
+    for(int i = 0; i < rec; i++) {
+        if(!one[i].payed){
+            not_ready++;
+        }
+        if(input == not_ready){
+            one[i].payed = true;
+        }
+    }
+
+    ofstream fout;
+    fout.open("Ordered_Pizzas_Binary.dat", ios::binary);
+    for(int i = 0; i < rec; i++) {
+        fout.write((char*)(&one[i]), sizeof(Order));
+    }
+    fout.close();
+
+    delete[] one;
+}
+
 
 
 

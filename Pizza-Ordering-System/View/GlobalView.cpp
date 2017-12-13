@@ -62,26 +62,6 @@ void GlobalView::view_order(Order order, int rec)
 
 }
 
-void GlobalView::displayToppings(){
-
-    Toppings topping;
-    cout << "Topping menu: " << endl;
-
-    ifstream fin;
-    fin.open("Toppings_Menu_Binary.dat", ios::binary);
-
-    fin.seekg(0, fin.end);
-    int records = fin.tellg() / sizeof(Toppings);
-    fin.seekg(0, fin.beg);
-
-    for(int i = 0; i < records; i++){
-        fin.read((char*)(&topping), sizeof(Toppings));
-        cout << "topping nr " << i+1 << ": "<< topping << endl;
-    }
-    fin.close();
-}
-
-
 void GlobalView::BakerOrderView()
 {
     ifstream fin;
@@ -104,5 +84,82 @@ void GlobalView::BakerOrderView()
             j++;
         }
     }
+    delete [] data;
+}
+
+void GlobalView::SalesmanOrderView()
+{
+    ifstream fin;
+
+    fin.open("Ordered_Pizzas_Binary.dat", ios::binary);
+
+    fin.seekg(0, fin.end);
+    int rec = fin.tellg() / sizeof(Order);
+    fin.seekg(0, fin.beg);
+
+    Order *data = new Order[rec];
+    fin.read((char*)data, sizeof(Order) * rec);
+
+    fin.close();
+
+    int j = 1;
+    for(int i = 0; i < rec; i++) {
+        if(!data[i].payed) {
+            cout << "Order nr: " << j << endl;
+            cout << data[i] << endl;
+            j++;
+        }
+    }
     delete[] data;
 }
+
+void GlobalView::OrderCount()
+{
+
+    ifstream fin;
+    fin.open("Ordered_pizzas_binary.dat", ios::binary);
+    fin.seekg(0, fin.end);
+    int rec = fin.tellg() / sizeof(Order);
+    fin.seekg(0, fin.beg);
+
+    Order *data  = new Order[rec];
+    fin.read((char*)data, sizeof(Order)*rec);
+    fin.close();
+
+    int sales = 0;
+    int baker = 0;
+
+    for(int i = 0; i < rec; i++) {
+        if(!data[i].state){
+            baker++;
+        }
+        if(!data[i].payed){
+            sales++;
+        }
+    }
+
+    cout << "Number of unbaked pizzas: " << baker << endl;
+    cout << "Number of unserved pizzas: " << sales << endl;
+}
+
+
+void GlobalView::displayToppings(){
+
+    Toppings topping;
+    cout << "Topping menu: " << endl;
+
+    ifstream fin;
+    fin.open("Toppings_Menu_Binary.dat", ios::binary);
+
+    fin.seekg(0, fin.end);
+    int records = fin.tellg() / sizeof(Toppings);
+    fin.seekg(0, fin.beg);
+
+    for(int i = 0; i < records; i++){
+        fin.read((char*)(&topping), sizeof(Toppings));
+        cout << "topping nr " << i+1 << ": "<< topping << endl;
+    }
+    fin.close();
+}
+
+

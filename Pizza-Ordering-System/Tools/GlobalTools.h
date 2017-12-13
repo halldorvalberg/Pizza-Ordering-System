@@ -18,6 +18,7 @@ namespace GlobalTools
     void clear_order(string e);
     void add_all_to_file(string data, string location);
     void baker_mark_element_ready(int input);
+    void sales_mark_element_ready(int input);
 
 
   /*  vector<Order> getOrders();

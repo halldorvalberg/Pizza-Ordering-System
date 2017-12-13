@@ -2,7 +2,6 @@
 
 SalesmanMenuController::SalesmanMenuController()
 {
-    clearScreen();
     init();
 }
 
@@ -12,45 +11,47 @@ SalesmanMenuController::~SalesmanMenuController()
 }
 
 void SalesmanMenuController::init(){
-    SalesmanMenuDisplay();
-
+    bool in_process = true;
     char input;
-    do{
-    cin >> input;
-    }while(input !='D'&& input != 'd' &&
-          input !='c'&& input != 'C' &&input !='q'&& input != 'Q');
 
-    cout << "Please select your location: ";
-    if (input == 'd' || input == 'D'){
-        cout << "Displaying all pizzas" << endl;
-        SalesmanMenuController smc;
+    do{
+        do{
+            clearScreen();
+            dispHeader();
+            SalesmanMenuDisplay();
+            cin >> input;
+
+        }while(input !='1' && input != '2' &&
+               input !='q' && input != 'Q');
+
+    if (input == '1'){
+            //Display ready pizzas
+            clearScreen();
+            dispHeader();
+            outputstring("Displaying all ready Orders");
+            SalesmanOrderView();
+            outputstring("Input any key to continue");
+            char cont;
+            cin >> cont;
     }
-    else if(input == 'c' || input == 'C'){
-        cout << "Please select a pizza order" << endl;
-        SalesmanMenuController smc;
+    else if(input == '2'){
+            mark_pizza_ready();
     }
     else if (input == 'q' || input == 'Q'){
-        MainMenuController mmc;
+        break;
     }
-    else{
-        cout << "Invalid input" << endl;
+    }while(in_process);
+}
+
+void SalesmanMenuController::mark_pizza_ready()
+{
+    clearScreen();
+    dispHeader();
+    SalesmanOrderView();
+    outputstring("Select Order to mark ready or 0 to return");
+    int input;
+    cin >> input;
+    if(input != 0){
+        sales_mark_element_ready(input);
     }
-}
-void SalesmanMenuController::displayPizzas(){
-    string str;
-    LocationRepo location;
-    OrderRepo ord;
-    cout << "Please select your location" << endl;
-    location.selectLocation(str);
-    cout << "Displaying all pizza orders at your location" << endl;
-    ord.DisplayAllOrdersAtLocationSalesman();
-}
-void SalesmanMenuController::CheckoutPizza(){
-    int ordernr;
-    OrderRepo ord;
-    displayPizzas();
-    cout << "Please select the order which" << endl;
-    cin >> ordernr;
-    ord.changeOrderSalesman();
-    cout << "Order has been changed!" << endl;
 }
