@@ -9,10 +9,7 @@ class OrderRepo
     public:
         OrderRepo();
         virtual ~OrderRepo();
-        void DisplayAllOrdersAtLocationBaker();
-        void DisplayAllOrdersAtLocationSalesman();
-        void changeOrderBaker();
-        void changeOrderSalesman();
+
 
     protected:
 

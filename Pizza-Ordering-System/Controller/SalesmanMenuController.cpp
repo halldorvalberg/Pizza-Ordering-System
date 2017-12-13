@@ -36,21 +36,4 @@ void SalesmanMenuController::init(){
         cout << "Invalid input" << endl;
     }
 }
-void SalesmanMenuController::displayPizzas(){
-    string str;
-    LocationRepo location;
-    OrderRepo ord;
-    cout << "Please select your location" << endl;
-    location.selectLocation(str);
-    cout << "Displaying all pizza orders at your location" << endl;
-    ord.DisplayAllOrdersAtLocationSalesman();
-}
-void SalesmanMenuController::CheckoutPizza(){
-    int ordernr;
-    OrderRepo ord;
-    displayPizzas();
-    cout << "Please select the order which" << endl;
-    cin >> ordernr;
-    ord.changeOrderSalesman();
-    cout << "Order has been changed!" << endl;
-}
+

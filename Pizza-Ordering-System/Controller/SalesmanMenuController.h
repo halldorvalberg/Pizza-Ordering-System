@@ -8,8 +8,6 @@ class SalesmanMenuController
     public:
         SalesmanMenuController();
         virtual ~SalesmanMenuController();
-        void displayPizzas();
-        void CheckoutPizza();
 
     protected:
 

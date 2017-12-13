@@ -36,53 +36,70 @@ void LocationRepo::validLocation(){
 void LocationRepo::AddLocation(Locations& location){
     ofstream fout;
 
-    fout.open("Locations.txt", ios::app);
-    if(fout.is_open()){
-        fout << location;
-        fout.close();
-    }
-    else{
-        cout << "File is not open!" << endl;
-    }
+    fout.open("Locations.dat", ios::binary|ios::app);
+
+    fout.write((char*)(&location), sizeof(Locations));
+
+    fout.close();
 }
 
 void LocationRepo::DisplayAllLocations(){
-    string str;
+
     Locations location;
     ifstream fin;
-    fin.open("Locations.txt");
+    fin.open("Locations.dat");
 
-    if(fin.is_open()){
+    fin.seekg(0, fin.end);
+    int records = fin.tellg() / sizeof(Locations);
+    fin.seekg(0, fin.beg);
 
-        while(!fin.eof()){
-          getline(fin, str);
-            cout << location << endl;
-            return;
-        }
+    for(int i = 0; i < records; i++){
+        fin.read((char*)(&location), sizeof(Locations));
+        cout << "Location " << i+1 << ": "<< location << endl;
+    }
 
     fin.close();
     }
-    else{
-        cout << "File is not open!" << endl;
+
+
+int LocationRepo::selectLocation(){
+    int loc;
+    DisplayAllLocations();
+    do{
+        cin >> loc;
+    }while(0 > loc);
+    if(loc == 0){
+
     }
+    return loc;
 
 }
+void LocationRepo::DisplayAllOrdersAtLocationBaker(){
+    /// WIP
+    Locations location;
+    int loc = selectLocation();
 
-void LocationRepo::selectLocation(string bb){
-    string str;
     ifstream fin;
-    fin.open("Location.txt");
 
-    if(fin.is_open()){
-        while(!fin.eof()){
-            getline(fin, str);
-            if(bb == str){
-                cout << str << endl;
-            }
-        }
-        fin.close();
+    fin.open("Pizza_Menu_Binary.dat", ios::binary);
+
+    fin.seekg(0, fin.end);
+    int records = fin.tellg() / sizeof(Locations);
+    fin.seekg(0, fin.beg);
+
+    ///if there is a match for location
+    if(records == loc) {
+        ///goes to search for Baker order at that location
+        cout << location;
+        int input;
+        cin >> input;
+
+        ///here it goes to look for a match for orders at that location
+        ///needs to be done
     }
-    else{
-        cout << "File is not open" << endl;
-    }
+    fin.close();
+}
+
+void LocationRepo::DisplayAllOrdersAtLocationSalesman(){
+    ///WIP
 }

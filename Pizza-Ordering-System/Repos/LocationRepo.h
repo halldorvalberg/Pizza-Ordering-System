@@ -14,8 +14,10 @@ class LocationRepo
         virtual ~LocationRepo();
         void AddLocation(Locations& location);
         void DisplayAllLocations();
-        void selectLocation(string bb);
+        int selectLocation();
         void validLocation();
+        void DisplayAllOrdersAtLocationBaker();
+        void DisplayAllOrdersAtLocationSalesman();
 
     protected:
 
