@@ -30,6 +30,8 @@
 #include "ToppingNameError.h"
 #include "ToppingPriceError.h"
 #include "OrderRepo.h"
+#include "PizzaRepo.h"
+#include "ToppingRepo.h"
 #include "Locations.h"
 
 

@@ -81,6 +81,10 @@
 		<Unit filename="Repos/LocationRepo.h" />
 		<Unit filename="Repos/OrderRepo.cpp" />
 		<Unit filename="Repos/OrderRepo.h" />
+		<Unit filename="Repos/PizzaRepo.cpp" />
+		<Unit filename="Repos/PizzaRepo.h" />
+		<Unit filename="Repos/ToppingRepo.cpp" />
+		<Unit filename="Repos/ToppingRepo.h" />
 		<Unit filename="Tools/GlobalTools.cpp" />
 		<Unit filename="Tools/GlobalTools.h" />
 		<Unit filename="View/AdminMenuView.cpp" />

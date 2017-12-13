@@ -16,8 +16,6 @@ class Order
         //Order(int kt, vector<Pizza> val);
         virtual ~Order();
 
-        void add_pizza(Pizza pizza);
-
         friend istream& operator >> (istream& in, Order& order);
         friend ostream& operator << (ostream& out, Order& order);
 
@@ -29,10 +27,6 @@ class Order
         int phone_number;
         int number_of_pizzas;
         Pizza ordered[20];
-        //int id;
-        //time_t date_of;
-        //time_t date_by;
-      //  vector <Pizza> ordervector;
 };
 
 #endif // ORDER_H

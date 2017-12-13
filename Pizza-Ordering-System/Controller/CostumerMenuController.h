@@ -11,13 +11,12 @@ class CostumerMenuController
     public:
         CostumerMenuController();
         virtual ~CostumerMenuController();
-        void customOrder(Order &order);
-        void OrderFromMenu(Order &order);
-        void add_to_order(int e, Order &order);
-        void get_id();
         void add_order_to_file(Order neworder);
-        void addToppingsToOrder(int e, Pizza &order);
+
         Toppings choose_topping_menu();
+        int chooseSize();
+        Pizza customOrder();
+        Pizza chooseFromMenu();
 
         char name[40];
         int phone_number;
