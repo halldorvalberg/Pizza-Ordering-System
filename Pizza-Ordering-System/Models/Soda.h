@@ -13,9 +13,7 @@ class Soda
         friend ostream& operator << (ostream& out, Soda& soda);
         friend istream& operator >> (istream& in, Soda& soda);
 
-
-
-        string name;
+        char name[30];
         double price;
 };
 

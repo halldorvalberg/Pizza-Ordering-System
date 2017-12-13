@@ -37,7 +37,7 @@ void PizzaRepController::init()
     }
     else if (input[0] == '2'){
         ///Add item to pizza menu
-        //add_to_menu();
+      //  add_to_menu();
         isPizzainputValid();
         outputstring("Enter any key to continue");
         cin >> input;
@@ -46,6 +46,8 @@ void PizzaRepController::init()
     else if (input[0] == '3'){
         ///Remove Item from pizza menu
         remove_element_from_menu();
+        outputstring("Enter any key to continue");
+        cin >> input;
         PizzaRepController prc;
     }
     else if (input[0] == 'q'){
@@ -55,15 +57,14 @@ void PizzaRepController::init()
 }
 
 
-void PizzaRepController::add_to_menu(Pizza& pizza)
+void PizzaRepController::add_to_menu(Pizza &pizza)
 {
     string name, price, size;
     vector<string> toppings;
 
     dispHeader();
 
-    //Pizza pizza;
-    //cin >> pizza;
+
     outputstring("\nYour pizza: \n");
     cout << pizza;
 
@@ -120,8 +121,9 @@ void PizzaRepController::remove_element_from_menu()
     }
     fout.close();
 
-    delete [] data;
-    }
+  outputstring("Your  selected pizza has been sucessfully removed from menu");
+     //  delete [] data;
+     }
 
 }
 

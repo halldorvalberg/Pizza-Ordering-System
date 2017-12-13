@@ -64,7 +64,7 @@ void ToppingRepController::remove_topping_from_menu(){
         }
     }
     fout.close();
-
+    outputstring("Your selected topping has been sucessfully removed from menu");
     delete [] data;
 }
 
@@ -100,6 +100,8 @@ void ToppingRepController::init(){
     else if (input[0] == '3'){
         ///Remove Item from toppings menu
         remove_topping_from_menu();
+        outputstring("Enter any key to continue");
+        cin >> input;
         ToppingRepController trc;
     }
     else if (input[0] == 'q'){

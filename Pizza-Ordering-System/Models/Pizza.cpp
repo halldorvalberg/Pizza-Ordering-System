@@ -29,13 +29,13 @@ ifstream& operator >> (ifstream& in, Pizza& pizza){
 
 ofstream& operator << (ofstream& out, Pizza& pizza)
 {
-    out << pizza.name << " " << pizza.sz <<" " << pizza.price << endl;
+    out << pizza.name << " " << pizza.sz << " " << pizza.price << endl;
     return out;
 }
 
 ostream& operator << (ostream& out, Pizza& pizza)
 {
-    out << "Name: " << pizza.name << "\t Size: " << pizza.sz << "\tPrice: " << pizza.price << " kr";
+    out << "Name: " << pizza.name << "\t Size: " << pizza.sz << "\t Price: " << pizza.price << " kr";
     return out;
 }
 istream& operator >> (istream& in, Pizza& pizza)

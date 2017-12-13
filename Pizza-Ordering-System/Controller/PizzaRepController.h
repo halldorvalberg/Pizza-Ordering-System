@@ -12,7 +12,7 @@ class PizzaRepController
         PizzaRepController();
         virtual ~PizzaRepController();
         void init();
-        void add_to_menu(Pizza& pizza);
+        void add_to_menu(Pizza &pizza);
         void remove_element_from_menu();
         void isPizzainputValid();
 

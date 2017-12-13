@@ -10,9 +10,7 @@ SodaRepo::~SodaRepo()
     //dtor
 }
 
-void SodaRepo::writeSoda(){
-    Soda soda;
-    cin >> soda;
+void SodaRepo::writeSoda(Soda& soda){
 
     ofstream fout("Soda.dat", ios::binary|ios::app);
 
@@ -39,18 +37,27 @@ void SodaRepo::displaySoda(){
 
 void SodaRepo::validSoda(){
     Soda soda;
-    //try{
+    try{
         cin >> soda;
         string name = soda.name;
         int price = soda.price;
         for(unsigned int i = 0; i < name.length(); i++){
             if(!isalpha(name[i])){
-                cout << "Invalid name" << endl;
+                throw SodaNameException("Invalid soda name");
                 break;
             }
         }
         if (price < 0){
-            cout << "Invalid price" << endl;
+            throw SodaPriceException("Invalid Soda price");
         }
-    //}
+    }
+    catch(SodaNameException sne){
+        cout << sne.getmessage();
+        return;
+    }
+    catch(SodaPriceException spe){
+        spe.getmessage();
+        return;
+    }
+
 }
