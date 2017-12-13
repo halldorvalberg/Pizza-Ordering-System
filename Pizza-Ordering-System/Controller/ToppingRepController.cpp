@@ -15,7 +15,7 @@ ToppingRepController::~ToppingRepController()
 void ToppingRepController::add_topping_to_menu(Toppings& topping){
     ///write the content of this into a file
     string name, price;
-    cout << "Your toppings: " << topping;
+    cout << "Your topping: " << topping;
     ofstream fout;
     fout.open("Toppings_Menu_Binary.dat", ios::app|ios::binary);
 
@@ -114,12 +114,12 @@ void ToppingRepController::AreToppingsValid(Toppings& topping) throw (ToppingNam
     int price = 0;
 
     try{
-        ///name input error isn't working like it should do
         cin >> topping;
         price = topping.gettoppingprice();
         name = topping.gettoppingname();
+
+        ///if name is not a letter then it throws error
         for(unsigned int i = 0; i < name.length(); i++){
-            ///if there is end to the input, break out of loop
              if(!isalpha(name[i])){
                 throw ToppingNameError("Invalid toppings name");
             }
@@ -132,12 +132,15 @@ void ToppingRepController::AreToppingsValid(Toppings& topping) throw (ToppingNam
 
     catch(ToppingNameError e){
         cout << e.getmessage() << endl;
+        return;
     }
 
     catch(ToppingPriceError e){
         cout <<  e.getmessage() << endl;
+        return;
 
     }
 
+    ///this code wont get executed if there's an error in input
     add_topping_to_menu(topping);
 }

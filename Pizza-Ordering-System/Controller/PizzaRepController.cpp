@@ -126,15 +126,14 @@ void PizzaRepController::remove_element_from_menu()
 }
 
 void PizzaRepController::isPizzainputValid(){
-    ///handles error in pizza input, doesn't do anything
+    ///handles error in pizza input
     Pizza pizza;
 
     try{
         cin >> pizza;
 
+        ///name is valid if there are only letters.
         for(unsigned int i = 0; i < 50 ; i++){
-            ///no input at the place in the name, go out of loop
-            ///name is valid at that point
             if (i < 50 && pizza.name[i] == '\0'){
                 break;
             }
@@ -143,25 +142,30 @@ void PizzaRepController::isPizzainputValid(){
             }
 
         }
-        if(pizza.sz < 0){
+        ///if pizza size is not specific value, then throw error
+        if(pizza.sz != 8 && pizza.sz != 16 && pizza.sz != 12){
             throw SizeException("Invalid size");
         }
-        if (pizza.price < 0){
+        ///Price of pizza must be more than the price of base pizza
+        if (pizza.price < 1500){
             throw PizzaPriceError("Not valid price");
         }
-
     }
     catch(PizzaNameError n){
         cout << n.getmessage() << endl;
+        return;
     }
     catch(SizeException szi){
         cout << szi.getMesssage() << endl;
+        return;
     }
 
     catch(PizzaPriceError p){
         cout << p.getmessage() << endl;
+        return;
     }
-    ///if manage to go through all the input check then a new pizza can be added
+
+    ///if manage to go through all the input check with no errors then a new pizza can be added to menu
     ///otherwise this code won't get executed
     add_to_menu(pizza);
 }

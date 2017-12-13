@@ -35,11 +35,6 @@ istream& operator >> (istream& in, Order& order){
     cout << "Enter your phone number: ";
     in >> order.phone_number;
 
-//    in >> order.state;
-//    in >> order.payed;
-//    in >> order.id;
-//    in >> order.date_of;
-//    in >> order.date_by;
     return in;
 }
 ostream& operator << (ostream& out, Order& order){
@@ -51,14 +46,8 @@ ostream& operator << (ostream& out, Order& order){
         out << order.ordered[i] << endl;
     }
 
-
     out << order.state;
     out << order.payed;
 
-
-
-//    out << order.id;
-//    out << order.date_of;
-//    out << order.date_by;
     return out;
 }

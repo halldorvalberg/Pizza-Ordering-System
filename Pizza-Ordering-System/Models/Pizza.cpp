@@ -43,9 +43,9 @@ istream& operator >> (istream& in, Pizza& pizza)
     cout << "Input Pizza name (50): ";
     in >> ws;
     in.getline(pizza.name, 50);
-    cout << "Input Pizza size: ";
+    cout << "Input Pizza size (8 / 12 / 16): ";
     in >> pizza.sz;
-     cout << "input Pizza price: ";
+     cout << "input Pizza price (above 1500) : ";
     in >> pizza.price;
 
     return in;
