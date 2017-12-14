@@ -468,24 +468,24 @@
 1512588599 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\pizzapriceerror.h
 	<string>
 
-1512588599 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingnameerror.cpp
+1513036110 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingnameerror.cpp
 	"ToppingNameError.h"
 
-1512588599 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingnameerror.h
+1513036110 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingnameerror.h
 	<iostream>
 	<string>
 
-1512588599 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingpriceerror.cpp
+1513036110 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingpriceerror.cpp
 	"ToppingPriceError.h"
 
-1512588599 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingpriceerror.h
+1513036110 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\toppingpriceerror.h
 	<string>
 
-1512415437 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\main.cpp
+1513211392 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\main.cpp
 	<iostream>
 	"MainMenuController.h"
 
-1512919840 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\mainmenucontroller.h
+1513197397 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\mainmenucontroller.h
 	<string>
 	<iostream>
 	<fstream>
@@ -515,21 +515,22 @@
 	"OrderRepo.h"
 	"Locations.h"
 
-1512919752 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\tools\globaltools.h
+1513036110 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\tools\globaltools.h
 	<stdlib.h>
 	<cstdlib>
 	<fstream>
 	<string>
 	"Pizza.h"
+	"Order.h"
 
-1512919752 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\models\pizza.h
+1513197398 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\models\pizza.h
 	<iostream>
 	<fstream>
 	<string>
 	<vector>
 	"Toppings.h"
 
-1512932687 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\models\toppings.h
+1513102533 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\models\toppings.h
 	<iostream>
 	<fstream>
 
@@ -545,18 +546,19 @@
 1512415437 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\view\bakermenuview.h
 	<iostream>
 
-1512415437 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\view\costumermenuview.h
+1513197398 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\view\costumermenuview.h
 	<iostream>
 
 1512415437 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\view\salesmanmenuview.h
 	<iostream>
 
-1512588599 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\view\globalview.h
+1513036110 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\view\globalview.h
 	<iostream>
 	<fstream>
 	"Pizza.h"
 	"DisplayString.h"
 	"GlobalTools.h"
+	"Order.h"
 
 1512588599 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\view\pizzarepmenuview.h
 	<iostream>
@@ -570,54 +572,61 @@
 1512588599 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\bakermenucontroller.h
 	"MainMenuController.h"
 
-1512919752 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\costumermenucontroller.h
+1513197397 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\costumermenucontroller.h
+	"MainMenuController.h"
+	"ToppingRepController.h"
+	"Order.h"
+
+1513197398 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\salesmanmenucontroller.h
 	"MainMenuController.h"
 
-1512588599 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\salesmanmenucontroller.h
+1513197397 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\pizzarepcontroller.h
 	"MainMenuController.h"
+	"PizzaNameError.h"
+	"PizzaPriceError.h"
+	"SizeException.h"
 
-1512919752 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\pizzarepcontroller.h
-	"MainMenuController.h"
-
-1512919752 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\models\order.h
+1513197398 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\models\order.h
 	<vector>
 	<iostream>
 	<ctime>
 	"Pizza.h"
 
-1512588599 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\repos\orderrepo.h
+1513197398 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\repos\orderrepo.h
 	"LocationRepo.h"
 	"MainMenuController.h"
 
-1512919752 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\repos\locationrepo.h
+1513211521 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\repos\locationrepo.h
 	"LocationException.h"
 	"Locations.h"
+	"MainMenuController.h"
 	<fstream>
 	<string>
 
 1512919752 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\locationexception.h
 	<string>
 
-1512588599 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\models\locations.h
+1513206584 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\models\locations.h
 	<iostream>
 	<string>
+	<fstream>
 
-1512588599 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\models\locations.cpp
+1513207695 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\models\locations.cpp
 	"Locations.h"
 
 1512415437 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\view\adminmenuview.cpp
 	"AdminMenuView.h"
 
-1512415437 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\view\bakermenuview.cpp
+1513036110 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\view\bakermenuview.cpp
 	"BakerMenuView.h"
 
-1512588599 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\view\costumermenuview.cpp
+1513197398 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\view\costumermenuview.cpp
 	"CostumerMenuView.h"
 
 1512415437 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\view\displaystring.cpp
 	"DisplayString.h"
 
-1512588599 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\view\globalview.cpp
+1513197398 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\view\globalview.cpp
 	"GlobalView.h"
 
 1512415437 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\view\mainmenuview.cpp
@@ -632,52 +641,54 @@
 1512588599 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\view\toppingrepmenuview.cpp
 	"ToppingRepMenuView.h"
 
-1512929978 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\toppingrepcontroller.h
+1513036110 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\toppingrepcontroller.h
 	"MainMenuController.h"
+	"ToppingNameError.h"
+	"ToppingPriceError.h"
 	<iostream>
 
 1512919802 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\adminmenucontroller.cpp
 	"AdminMenuController.h"
 
-1512919752 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\bakermenucontroller.cpp
+1513036110 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\bakermenucontroller.cpp
 	"BakerMenuController.h"
 
-1512931049 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\costumermenucontroller.cpp
+1513197397 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\costumermenucontroller.cpp
 	"CostumerMenuController.h"
 	<string>
 	<iostream>
 
-1512919752 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\mainmenucontroller.cpp
+1513036110 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\mainmenucontroller.cpp
 	"MainMenuController.h"
 
-1512919752 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\pizzarepcontroller.cpp
+1513197397 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\pizzarepcontroller.cpp
 	"PizzaRepController.h"
 
-1512919752 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\salesmanmenucontroller.cpp
+1513197398 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\salesmanmenucontroller.cpp
 	"SalesmanMenuController.h"
 
 1512919752 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\locationexception.cpp
 	"LocationException.h"
 
-1512919752 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\models\order.cpp
+1513197398 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\models\order.cpp
 	"Order.h"
 
-1512932062 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\models\pizza.cpp
+1513197398 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\models\pizza.cpp
 	"Pizza.h"
 
-1512934114 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\models\toppings.cpp
+1513102533 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\models\toppings.cpp
 	"Toppings.h"
 
-1512919752 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\repos\locationrepo.cpp
+1513211521 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\repos\locationrepo.cpp
 	"LocationRepo.h"
 
-1512919752 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\repos\orderrepo.cpp
+1513197398 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\repos\orderrepo.cpp
 	"OrderRepo.h"
 
-1512919752 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\tools\globaltools.cpp
+1513036110 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\tools\globaltools.cpp
 	"GlobalTools.h"
 
-1512934022 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\toppingrepcontroller.cpp
+1513197398 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\controller\toppingrepcontroller.cpp
 	"ToppingRepController.h"
 
 1512991135 c:\users\halldór valberg\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\locationexception.h
@@ -691,4 +702,37 @@
 
 1513092889 source:c:\users\notandi\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\sizeexception.cpp
 	"SizeException.h"
+
+1513197398 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\sizeexception.h
+	<string>
+
+1513197398 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\sizeexception.cpp
+	"SizeException.h"
+
+1513197398 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\sodanameexception.cpp
+	"SodaNameException.h"
+
+1513197398 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\sodanameexception.h
+	<string>
+
+1513197398 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\sodapriceexception.cpp
+	"SodaPriceException.h"
+
+1513197398 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\exceptions\sodapriceexception.h
+	<string>
+
+1513197398 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\models\soda.cpp
+	"Soda.h"
+
+1513197398 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\models\soda.h
+	<iostream>
+
+1513206976 source:c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\repos\sodarepo.cpp
+	"SodaRepo.h"
+
+1513197398 c:\users\user\documents\github\pizza-ordering-system\pizza-ordering-system\repos\sodarepo.h
+	<fstream>
+	"Soda.h"
+	"SodaNameException.h"
+	"SodaPriceException.h"
 

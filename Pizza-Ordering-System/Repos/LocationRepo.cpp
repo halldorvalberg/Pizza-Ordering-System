@@ -12,12 +12,14 @@ LocationRepo::~LocationRepo()
 
 ///valid input of the location
 void LocationRepo::validLocation(){
-    string str;
-    cin >> str;
+
+    Locations location;
 
     try{
-        for(unsigned int i = 0; i < str.size(); i++){
-            if(!isalpha(str[i])){
+        cin >> location;
+         string local = location.getlocation();
+        for(unsigned int i = 0; i < local.length(); i++){
+            if(!isalpha(local[i])){
                 throw LocationException("Invalid location");
             }
 
@@ -26,16 +28,18 @@ void LocationRepo::validLocation(){
 
     catch (LocationException ex){
         cout << ex.getmessage() << endl;
+        return;
     }
     ///if valid input then it goes to this
-    Locations location(str);
     AddLocation(location);
 }
 
 ///checking if the location which is put in is on the list (valid)
 void LocationRepo::AddLocation(Locations& location){
-    ofstream fout;
 
+    string local;
+    cout << location;
+    ofstream fout;
     fout.open("Locations.dat", ios::binary|ios::app);
 
     fout.write((char*)(&location), sizeof(Locations));
@@ -47,7 +51,7 @@ void LocationRepo::DisplayAllLocations(){
 
     Locations location;
     ifstream fin;
-    fin.open("Locations.dat");
+    fin.open("Locations.dat", ios::binary);
 
     fin.seekg(0, fin.end);
     int records = fin.tellg() / sizeof(Locations);
@@ -62,44 +66,57 @@ void LocationRepo::DisplayAllLocations(){
     }
 
 
-int LocationRepo::selectLocation(){
-    int loc;
-    DisplayAllLocations();
-    do{
-        cin >> loc;
-    }while(0 > loc);
-    if(loc == 0){
-
-    }
-    return loc;
-
-}
-void LocationRepo::DisplayAllOrdersAtLocationBaker(){
-    /// WIP
+Locations LocationRepo::selectLocation(){
     Locations location;
-    int loc = selectLocation();
+    Locations currentlocation;
+    int loc;
+    char element;
+    DisplayAllLocations();
+    outputstring("select your location or q to cancel");
+    cin >> element;
+    if(element != 'q' && 48 < element && element < 58) {
+        loc = element - 49;
+    }
+        ifstream fin;
 
-    ifstream fin;
-
-    fin.open("Pizza_Menu_Binary.dat", ios::binary);
+    fin.open("Locations.dat", ios::binary);
 
     fin.seekg(0, fin.end);
     int records = fin.tellg() / sizeof(Locations);
     fin.seekg(0, fin.beg);
 
+  //  Locations *data = new Locations[records];
+
     ///if there is a match for location
-    if(records == loc) {
-        ///goes to search for Baker order at that location
-        cout << location;
-        int input;
-        cin >> input;
+    for(int i = 0; i < records; i++){
+     fin.read((char*)(&location), sizeof(Locations));
+    if(i == loc) {
+        currentlocation = location;
+        break;
+    }
 
         ///here it goes to look for a match for orders at that location
         ///needs to be done
+
     }
     fin.close();
+    return currentlocation;
+
+}
+void LocationRepo::DisplayAllOrdersAtLocationBaker(){
+    /// WIP
+    outputstring("Pizzas at your location");
+    Locations loc;
+    loc = selectLocation();
+    cout << loc << endl;
+
+
 }
 
 void LocationRepo::DisplayAllOrdersAtLocationSalesman(){
     ///WIP
+    outputstring("Pizzas at your location");
+    Locations loc;
+    loc = selectLocation();
+    cout << loc << endl;
 }

@@ -28,6 +28,7 @@ void SodaRepo::displaySoda(){
     int records = fin.tellg() / sizeof(Soda);
     fin.seekg(0, fin.beg);
 
+
     for(int i = 0; i < records; i++){
         fin.read((char*)(&soda), sizeof(Soda));
         cout << "Soda nr " << i+1 << ": "<< soda << endl;

@@ -4,6 +4,8 @@
 #include "LocationException.h"
 
 #include "Locations.h"
+#include "MainMenuController.h"
+
 #include <fstream>
 #include <string>
 
@@ -14,7 +16,7 @@ class LocationRepo
         virtual ~LocationRepo();
         void AddLocation(Locations& location);
         void DisplayAllLocations();
-        int selectLocation();
+        Locations selectLocation();
         void validLocation();
         void DisplayAllOrdersAtLocationBaker();
         void DisplayAllOrdersAtLocationSalesman();
